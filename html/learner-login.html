@@ -15,7 +15,7 @@
     <body class="learner-login-container">
         <div class="learner-login-section">
             <h1 class="learner-login-section-title">Learner login</h1>
-            <form>
+            <form class="learner-login-form">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -24,8 +24,13 @@
                   <label for="exampleInputPassword1">Password</label>
                   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="learner-login-submit-button-container">
+                    <button type="submit" class="btn btn-primary learner-login-submit-button">Submit</button>
+                </div>
+                <div class="learner-login-submit-text">
+                    Don't have an account?
+                    <a href="#" class="learner-login-submit-text-link">Sign up here</a>
+                </div>
               </form>
         </div>
         </div>

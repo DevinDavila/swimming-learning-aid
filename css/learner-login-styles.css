@@ -23,3 +23,31 @@
     font-family: 'Calibri','Arial';
 }
 
+.learner-login-form {
+    width: 80%;
+}
+
+.learner-login-submit-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 180px;
+}
+
+.learner-login-submit-button {
+    width: 200px;
+}
+
+.learner-login-submit-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.learner-login-submit-text-link {
+    color: #000000;
+    font-weight: bold;
+}
+
+.learner-login-submit-text-link:hover {
+    color: #000000;
+}
