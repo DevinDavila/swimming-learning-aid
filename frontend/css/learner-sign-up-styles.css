@@ -1,0 +1,73 @@
+.learner-sign-up-container{
+    background: #2069C5;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.learner-sign-up-section{
+    width: 900px;
+    height: 550px;
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.learner-sign-up-section-title {
+    color: #000000;
+    text-align:left;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-size: 40px;
+    font-family: 'Calibri','Arial';
+    font-weight: bold;
+}
+
+.learner-sign-up-form {
+    width: 80%;
+}
+
+.learner-sign-up-submit-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 175px;
+}
+
+.learner-sign-up-submit-button {
+    width: 200px;
+}
+
+.learner-sign-up-submit-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.learner-sign-up-submit-text-link {
+    color: #000000;
+    font-weight: bold;
+}
+
+.learner-back-button{
+    width: 200px;
+    height: 50px;
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+    align-items: center;
+    top: 40px;
+    left: 50px;    
+}
+
+.learner-back-button-text{
+    color: #000000;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Calibri','Arial';
+    font-weight: bold;
+}
