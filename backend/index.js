@@ -1,7 +1,7 @@
 import app from './server.js';
 import mongodb from "mongodb";
 import dotenv from "dotenv";
-// import StudentsDAO from './dao/studentsDAO.js';
+import StudentsDAO from './dao/studentsDAO.js';
 // import AuthenticationDAO from './dao/authenticationDAO.js';
 
 dotenv.config();
@@ -23,7 +23,7 @@ MongoClient.connect(
 })
 // if there's no errors run the following code 
 .then(async client => {
-    // await StudentsDAO.injectDB(client);
+    await StudentsDAO.injectDB(client);
     // await AuthenticationDAO.injectDB(client);
     
     app.listen(port, () => {
