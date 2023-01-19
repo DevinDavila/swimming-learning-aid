@@ -12,7 +12,7 @@ export default class StudentsDAO {
             return;
         }
         try {
-            students = await conn.db(process.env.DB_NAME).collection("cars");
+            students = await conn.db(process.env.DB_NAME).collection("students");
         } catch (e) {
             console.error(`Unable to establish a collection in studentsDAO: ${e}`);
         }
