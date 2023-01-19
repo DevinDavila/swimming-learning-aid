@@ -21,7 +21,7 @@ export default class StudentsDAO {
     static async getStudents({} = {}) {
         let query;
 
-        query = {"deleted": { $eq: false }}
+        query = {}
 
         let cursor;
 

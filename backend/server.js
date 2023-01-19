@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json()); // This allows the server can accept and will be able to read json 
  
 // Specify the initial url of the routes. The actual routes will be in another file. 
-app.use("/api/students", students); // Specifying the url for the route and cars will be the file we add later. 
+app.use("/api/students", students); // Specifying the url for the route 
 // app.use("/api/authentication", authentication);
 app.use("*", (req, res) => res.status(404).json({ error: "not found" }));
  
