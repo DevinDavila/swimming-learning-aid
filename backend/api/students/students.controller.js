@@ -1,4 +1,4 @@
-import StudentsDAO from "../dao/studentsDAO.js";
+import StudentsDAO from "../../dao/studentsDAO.js";
 
 export default class StudentsController {
 
