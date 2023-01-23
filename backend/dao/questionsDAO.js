@@ -27,7 +27,7 @@ export default class QuestionsDAO {
                     }
                 }
             ]
-            return await questions.aggregate(pipeline).next();
+            return await questions.aggregate(pipeline).toArray();
         } catch (e) {
             console.error(`Something went wrong in getQuestionsByStage: ${e}`);
             throw e;
