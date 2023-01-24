@@ -19,4 +19,21 @@ export default class ScoresController {
             res.status(500).json({ error: e });
         }
     }
+
+    static async apiGetLatestScoreByStudentId(req, res, next) {
+        try {
+            let studentId = req.params.studentId || {};
+            let scores = await ScoresDAO.getLatestScoreByStudentId(studentId);
+ 
+            if (!scores) {
+                res.status(404).json({ error: "Not Found" });
+                return;
+            }
+ 
+            res.json(scores)
+        } catch (e) {
+            console.log(`api, ${e}`);
+            res.status(500).json({ error: e });
+        }
+    }
 }

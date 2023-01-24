@@ -34,4 +34,25 @@ export default class ScoresDAO {
             throw e;
         }
     }
+
+    static async getLatestScoreByStudentId(studentId) {
+        try {
+            const pipeline = [
+                {
+                    $match: {
+                        student_id: new ObjectId(studentId)
+                    }
+                },
+                {
+                    $sort: {
+                        date_time: -1
+                    }
+                }
+            ]
+            return await scores.aggregate(pipeline).next();
+        } catch (e) {
+            console.error(`Something went wrong in getLatestScoreByStudentId: ${e}`);
+            throw e;
+        }
+    }
 }
