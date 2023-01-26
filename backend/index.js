@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import StudentsDAO from './dao/studentsDAO.js';
 import QuestionsDAO from './dao/questionsDAO.js';
 import AnswersDAO from './dao/answersDAO.js';
+import ScoresDAO from './dao/scoresDAO.js';
 // import AuthenticationDAO from './dao/authenticationDAO.js';
 
 dotenv.config();
@@ -28,6 +29,7 @@ MongoClient.connect(
     await StudentsDAO.injectDB(client);
     await QuestionsDAO.injectDB(client);
     await AnswersDAO.injectDB(client);
+    await ScoresDAO.injectDB(client);
     // await AuthenticationDAO.injectDB(client);
     
     app.listen(port, () => {
