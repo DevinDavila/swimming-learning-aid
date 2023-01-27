@@ -1,7 +1,7 @@
 import app from './server.js';
 import mongodb from "mongodb";
 import dotenv from "dotenv";
-import StudentsDAO from './dao/studentsDAO.js';
+import UsersDAO from './dao/usersDAO.js';
 import QuestionsDAO from './dao/questionsDAO.js';
 import AnswersDAO from './dao/answersDAO.js';
 import ScoresDAO from './dao/scoresDAO.js';
@@ -26,7 +26,7 @@ MongoClient.connect(
 })
 // if there's no errors run the following code 
 .then(async client => {
-    await StudentsDAO.injectDB(client);
+    await UsersDAO.injectDB(client);
     await QuestionsDAO.injectDB(client);
     await AnswersDAO.injectDB(client);
     await ScoresDAO.injectDB(client);
