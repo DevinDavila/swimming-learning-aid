@@ -3,7 +3,7 @@ import ScoresController from "./scores.controller.js";
 
 const router = express.Router();
 
-router.route("/scoresBystudentIdByStage/:studentId/:stage").get(ScoresController.apiGetScoreByStudentIdByStage);
-router.route("/latestScoreByStudentId/:studentId").get(ScoresController.apiGetLatestScoreByStudentId);
+router.route("/scoresByLearnerIdByStage/:userId/:stage").get(ScoresController.apiGetScoreByUserIdByStage);
+router.route("/latestScoreByLearnerId/:userId").get(ScoresController.apiGetLatestScoreByUserId);
 
 export default router

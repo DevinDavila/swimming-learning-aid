@@ -2,11 +2,11 @@ import ScoresDAO from "../../dao/scoresDAO.js";
 
 export default class ScoresController {
 
-    static async apiGetScoreByStudentIdByStage(req, res, next) {
+    static async apiGetScoreByUserIdByStage(req, res, next) {
         try {
-            let studentId = req.params.studentId || {};
+            let userId = req.params.userId || {};
             let stage = req.params.stage || {};
-            let scores = await ScoresDAO.getScoreByStudentIdByStage(studentId, stage);
+            let scores = await ScoresDAO.getScoreByUserIdByStage(userId, stage);
  
             if (!scores) {
                 res.status(404).json({ error: "Not Found" });
@@ -20,10 +20,10 @@ export default class ScoresController {
         }
     }
 
-    static async apiGetLatestScoreByStudentId(req, res, next) {
+    static async apiGetLatestScoreByUserId(req, res, next) {
         try {
-            let studentId = req.params.studentId || {};
-            let scores = await ScoresDAO.getLatestScoreByStudentId(studentId);
+            let userId = req.params.userId || {};
+            let scores = await ScoresDAO.getLatestScoreByUserId(userId);
  
             if (!scores) {
                 res.status(404).json({ error: "Not Found" });
