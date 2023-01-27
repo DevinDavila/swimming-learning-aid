@@ -7,8 +7,8 @@ export default class AuthenticationController {
             const dateOfBirth = req.body.date_of_birth;
             const guardianFirstName = req.body.guardian_first_name;
             const guardianLastName = req.body.guardian_last_name;
-            const learnerFirstName = req.body.learner_first_name;
-            const learnerLastName = req.body.learner_last_name;
+            const firstName = req.body.first_name;
+            const lastName = req.body.last_name;
             const email = req.body.email;
             const password = req.body.password;
             const type = req.body.type;
@@ -18,8 +18,8 @@ export default class AuthenticationController {
                 dateOfBirth,
                 guardianFirstName,
                 guardianLastName,
-                learnerFirstName,
-                learnerLastName,
+                firstName,
+                lastName,
                 email,
                 password,
                 type,

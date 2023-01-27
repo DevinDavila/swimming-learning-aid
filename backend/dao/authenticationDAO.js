@@ -21,7 +21,7 @@ export default class AuthenticationDAO {
         }
     }
 
-    static async registerUser(dateOfBirth, guardianFirstName, guardianLastName, learnerFirstName, learnerLastName, email, password, type, status) {
+    static async registerUser(dateOfBirth, guardianFirstName, guardianLastName, firstName, lastName, email, password, type, status) {
         try {
             // Validate if user exist in our database
             const oldUser = await users.findOne({ email });
@@ -37,8 +37,8 @@ export default class AuthenticationDAO {
                 date_of_birth: dateOfBirth,
                 guardian_first_name: guardianFirstName,
                 guardian_last_name: guardianLastName,
-                learner_first_name: learnerFirstName,
-                learner_last_name: learnerLastName,
+                first_name: firstName,
+                last_name: lastName,
                 email: email,
                 password: encryptedPassword,
                 type: type,
