@@ -18,7 +18,7 @@ export default class UserDAO {
         }
     }
 
-    static async getLearners({} = {}) {
+    static async getAllUsers({} = {}) {
         let query;
 
         query = {"type": { $eq: "learner" }}
