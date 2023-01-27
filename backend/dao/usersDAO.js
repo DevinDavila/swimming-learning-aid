@@ -29,17 +29,17 @@ export default class UserDAO {
             cursor = await users.find(query);
         } catch(e) {
             console.error(`Unable to issue find command, ${e}`);
-            return { learnersList: [], totalNumberOfLearners: 0 }
+            return { usersList: [], totalNumberOfUsers: 0 }
         }
 
         try {
-            const learnersList = await cursor.toArray();
-            const totalNumberOfLearners = await users.countDocuments(query);
+            const usersList = await cursor.toArray();
+            const totalNumberOfUsers = await users.countDocuments(query);
 
-            return { learnersList, totalNumberOfLearners }
+            return { usersList, totalNumberOfUsers }
         } catch(e) {
             console.error(`Unable to convert cursor to array or problem counting documents, ${e}`);
-            return { learnersList: [], totalNumberOfLearners: 0 }
+            return { usersList: [], totalNumberOfUsers: 0 }
         } 
     }
 }

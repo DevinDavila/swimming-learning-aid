@@ -2,13 +2,13 @@ import UsersDAO from "../../dao/usersDAO.js";
 
 export default class UsersController {
 
-    static async apiGetLearners(req, res, next) {
+    static async apiGetAllUsers(req, res, next) {
 
-        const { learnersList, totalNumberOfLearners } = await UsersDAO.getLearners();
+        const { usersList, totalNumberOfUsers } = await UsersDAO.getAllUsers();
 
         let response = {
-            learners: learnersList,
-            total_results: totalNumberOfLearners
+            users: usersList,
+            total_results: totalNumberOfUsers
         };
         
         res.json(response);
