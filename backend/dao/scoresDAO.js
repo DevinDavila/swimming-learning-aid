@@ -18,29 +18,29 @@ export default class ScoresDAO {
         }
     }
 
-    static async getScoreByStudentIdByStage(studentId, stage) {
+    static async getScoreByUserIdByStage(userId, stage) {
         try {
             const pipeline = [
                 {
                     $match: {
-                        student_id: new ObjectId(studentId),
+                        user_id: new ObjectId(userId),
                         stage: stage
                     }
                 }
             ]
             return await scores.aggregate(pipeline).toArray();
         } catch (e) {
-            console.error(`Something went wrong in getScoreByStudentIdByStage: ${e}`);
+            console.error(`Something went wrong in getScoreByUserIdByStage: ${e}`);
             throw e;
         }
     }
 
-    static async getLatestScoreByStudentId(studentId) {
+    static async getLatestScoreByUserId(userId) {
         try {
             const pipeline = [
                 {
                     $match: {
-                        student_id: new ObjectId(studentId)
+                        user_id: new ObjectId(userId)
                     }
                 },
                 {
@@ -51,7 +51,7 @@ export default class ScoresDAO {
             ]
             return await scores.aggregate(pipeline).next();
         } catch (e) {
-            console.error(`Something went wrong in getLatestScoreByStudentId: ${e}`);
+            console.error(`Something went wrong in getLatestScoreByUserId: ${e}`);
             throw e;
         }
     }
