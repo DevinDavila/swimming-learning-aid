@@ -13,34 +13,56 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
     <body class="admin-sign-up-container">
-        <div class="admin-sign-up-section">
+        <div class="admin-sign-up-main-section">
             <div class="admin-sign-up-section-title">Admin Sign up</div>
-            <form class="admin-sign-up-form">
-                <div class="form-group">
-                    <label for="inputEmailAddress">Email address</label> <div class="admin-required-text"> Required</div>
-                    <input type="email" class="form-control" id="inputEmailAddress" aria-describedby="emailHelp" placeholder="Enter email address">
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword">Password</label>   <div class="admin-required-text"> Required</div>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="inputConfirmPassword">Confirm Password</label> <div class="admin-required-text"> Required</div>
-                    <input type="confirmPassword" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
-                </div>
-                <div class="admin-sign-up-submit-button-container">
-                    <button type="submit" class="btn btn-primary admin-sign-up-submit-button">Sign up</button>
-                </div>
-                <div class="admin-sign-up-submit-text">
-                    Already have an account?
-                    <a href="file:///C:/Users/devin/OneDrive/Desktop/Documents/School/Computer%20Science/Visual%20Studio/frontend/html/admin-login.html" 
-                    class="admin-sign-up-submit-text-link"> Login here</a>
-                </div>
-            </form>
-        </div>
 
+            <div class="admin-sign-up-big-section">
+
+                <div class="admin-sign-up-left-section">
+                    <form class="admin-sign-up-form">
+                        <div class="form-group">
+                            <label for="inputEmailAddress">Email address</label> <div class="admin-required-text"> Required</div>
+                            <input type="email" class="form-control" id="inputEmailAddress" aria-describedby="emailHelp" placeholder="Enter email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword">Password</label>   <div class="admin-required-text"> Required</div>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputConfirmPassword">Confirm Password</label> <div class="admin-required-text"> Required</div>
+                            <input type="confirmPassword" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
+                        </div>
+                        
+                    </form>
+                </div>
+
+                <div class="admin-sign-up-right-section">
+                    <form class="admin-sign-up-form">
+                        <div class="form-group">
+                            <label for="inputAdminFirstname">Admin Firstname</label> <div class="admin-required-text"> Required</div>
+                            <input type="name" class="form-control" id="inputAdminFirstname" placeholder="e.g. Bob">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAdminSurname">Admin Surname</label> <div class="admin-required-text"> Required</div>
+                            <input type="name" class="form-control" id="inputAdminSurname" placeholder="e.g. Smith">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="admin-sign-up-submit-button-container">
+                <button type="submit" class="btn btn-primary admin-sign-up-submit-button">Sign up</button>
+            </div>
+            <div class="admin-sign-up-submit-text"> Already have an account?
+            <a href="file:///C:/Users/devin/OneDrive/Desktop/Documents/School/Computer%20Science/Visual%20Studio/frontend/html/admin-login.html" 
+                class="admin-sign-up-submit-text-link"> Login here</a>
+            </div>
+
+        </div>
         <a class="admin-back-button" href="file:///C:/Users/devin/OneDrive/Desktop/Documents/School/Computer%20Science/Visual%20Studio/frontend/html/login-decision.html">
             <div class="admin-back-button-text">Back to decision page</div>
         </a>
+        </div>
     </body>
 </html>
