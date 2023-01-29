@@ -55,4 +55,20 @@ export default class ScoresDAO {
             throw e;
         }
     }
+
+    static async addScore(userId, stage, dateTime, score) {
+        try {
+            const scoreObj = { 
+                user_id: ObjectId(userId),
+                stage: stage,
+                date_time: dateTime,
+                score: score
+            };
+ 
+            return await scores.insertOne(scoreObj);
+        } catch (e) {
+            console.error(`Unable to add score: ${e}`);
+     return { error: e };
+        }
+    }
 }
