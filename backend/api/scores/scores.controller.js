@@ -36,4 +36,24 @@ export default class ScoresController {
             res.status(500).json({ error: e });
         }
     }
+
+    static async apiAddScore(req, res, next) {
+        try {
+            const userId = req.body.user_id;
+            const stage = req.body.stage;
+            const dateTime = req.body.date_time;
+            const score = req.body.score;
+ 
+            const addScoreResponse = await ScoresDAO.addScore(
+                userId,
+                stage,
+                dateTime,
+                score
+            );
+
+            res.json({ status: "success" });
+        } catch (e) {
+            res.status(500).json({ error: e.message });
+        }
+    }
 }
