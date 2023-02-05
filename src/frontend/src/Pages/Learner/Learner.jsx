@@ -1,12 +1,10 @@
+import BackButton from '../../Components/BackButton/BackButton';
 import './Learner.css';
 
 function Learner() {
     return (
         <div className='learner-container'>
-            <div className='learner-back-button-container'>
-                <a class="learner-back-button" href="file:///C:/Users/devin/OneDrive/Desktop/Documents/School/Computer%20Science/Visual%20Studio/frontend/html/login-decision.html">Back to decision page</a>
-            </div>
-            
+            <BackButton />
             <div class="learner-login-section">
                 <div class="learner-login-section-title">Learner login</div>
                 <form class="learner-login-form">
