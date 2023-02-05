@@ -1,0 +1,17 @@
+.stage-box{
+    background-color: white;
+    height:130px;
+    width: 330px;
+    border-radius: 15px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.stage-text{
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Calibri','Arial';
+    font-weight: bold;
+}
