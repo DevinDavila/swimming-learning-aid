@@ -1,0 +1,139 @@
+/* Login */
+
+.learner-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.learner-login-section{
+    width: 400px;
+    height: 550px;
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.learner-login-section-title {
+    color: #000000;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-size: 40px;
+    font-family: 'Calibri','Arial';
+    font-weight: bold;
+}
+
+.learner-login-form {
+    width: 80%;
+}
+
+.learner-login-submit-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 175px;
+}
+
+.learner-login-submit-button {
+    width: 200px;
+}
+
+.learner-login-submit-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.learner-login-submit-text-link {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Sign Up */
+
+.learner-sign-up-main-section{
+    width: 900px;
+    height: 600px;
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+}
+
+.learner-sign-up-big-section{
+    width: 900px;
+    height: 400px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.learner-sign-up-left-section{
+    width: 450px;
+    height: 400px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.learner-sign-up-right-section{
+    width: 450px;
+    height: 400px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.learner-sign-up-section-title {
+    color: #000000;
+    text-align:left;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    font-size: 40px;
+    font-family: 'Calibri','Arial';
+    font-weight: bold;
+}
+
+.learner-sign-up-form {
+    width: 80%;
+}
+
+
+.learner-sign-up-submit-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.learner-sign-up-submit-button {
+    width: 200px;
+    margin-top: -20px;
+}
+
+.learner-sign-up-submit-text {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.learner-sign-up-submit-text-link {
+    color: #000000;
+    font-weight: bold;
+}
+
+.learner-required-text{
+    color: red;
+    font-size: 17px;
+    font-family: 'Calibri','Arial';
+    font-style:italic;
+    display: inline-block;
+}
