@@ -1,8 +1,8 @@
 .login-container{
-    background: #2069C5;
     display: flex;
     justify-content: center;
-    align-items:center;
+    margin-top: 90px;
+    height: 552px;
 }
 
 .login-sections-container {
@@ -27,7 +27,7 @@
 .login-left-section-title, .login-right-section-title {
     color: #000000;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 20px;
     font-size: 40px;
     font-family: 'Calibri','Arial';
