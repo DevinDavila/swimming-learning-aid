@@ -1,165 +1,63 @@
-/* Top section */
-
-.top-section{
-    width:100%;
-    display:flex;
-    justify-content: space-between;
+.login-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 130px;
+    height: 552px;
 }
 
-.logo{
-    background-color: white;
-    height:110px;
-    width: 300px;
-    border-radius: 15px;
-    display:flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 10px;
-}
-
-.logo-picture{
-    height: 100px;
-    width: 100px;
-
-}
-
-.logo-text{
-    flex-direction: column;
-    display:flex;
-}
-
-.logo-blue-text{
-    color:#2195AE;
-    text-align: center;
-    font-size: 28px;
-    font-family: 'Calibri','Arial';
-    font-weight: bold;
-}
-
-.logo-red-text{
-    color:#EE3A24;
-    text-align: center;
-    font-size: 28px;
-    font-family: 'Calibri','Arial';
-    font-weight: bold;
-}
-
-.option-container{
-    background-color:#555555;
-    height: 110px;
+.login-sections-container {
     width: 1000px;
-    border-radius: 15px;
     display: flex;
-    justify-content: space-around;
-    margin: 10px;
-}
-
-.results-container{
-    display:flex;
-    align-items: center;
-}
-
-.results-text{
-    color: white;
-    text-align: center;
-    font-size: 32px;
-    font-family: 'Calibri','Arial';
-    font-weight: bold;
-}
-
-.account-container{
-    display:flex;
-    align-items: center;
-}
-
-.account-text{
-    color: white;
-    text-align: center;
-    font-size: 32px;
-    font-family: 'Calibri','Arial';
-    font-weight: bold;
-}
-
-/* Middle section */
-
-.middle-section{
-    width:100%;
-    margin-top: 30px;
-}
-
-.middle-section-text{
-    color: white;
-    text-align: left;
-    font-size: 32px;
-    font-family: 'Calibri','Arial';
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-.stages-container{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-/* Bottom Section */
-
-.bottom-section{
-    width:100%;
-    margin-top: 30px;
-}
-
-.bottom-section-text{
-    color: white;
-    text-align: left;
-    font-size: 32px;
-    font-family: 'Calibri','Arial';
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-.bottom-section-boxes{
-    display:flex;
     justify-content: space-between;
-}
-
-.left-box{
-    background-color: white;
-    height:130px;
-    width: 720px;
-    border-radius: 15px;
-    display:flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: left;
-    margin: 10px;
+    position: absolute;
 }
 
-.left-box-text{
-    color: black;
+.login-left-section, .login-right-section{
+    width: 400px;
+    height: 550px;
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-left-section-title, .login-right-section-title {
+    color: #000000;
     text-align: center;
-    font-size: 42px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 40px;
     font-family: 'Calibri','Arial';
     font-weight: bold;
-    margin-left: 30px;
 }
 
-.right-box{
-    background-color: white;
-    height:130px;
-    width: 720px;
-    border-radius: 15px;
-    display:flex;
-    align-items: center;
-    justify-content: left;
-    margin-right: 30px;
-    margin: 10px;
+.login-left-section-image-container {
+    width: 240px;
+    height: 220px;
+    margin: 0px 0px 35px 0px;
+}
+.login-right-section-image-container {
+    width: 290px;
+    height: 300px;
+    margin: -25px 0px 0px 0px;
 }
 
-.right-box-text{
-    color: black;
+.login-right-section-image, .login-left-section-image {
+    width: 100%;
+}
+
+.login-left-section-text, .login-right-section-text {
+    width: 325px;
     text-align: center;
-    font-size: 42px;
-    font-family: 'Calibri','Arial';
+    font-size: 25px;
     font-weight: bold;
-    margin-left: 30px;
+    font-family: 'Calibri', 'Arial';
+}
+
+.login-sections-link {
+    text-decoration: none;
+    color: #000000;
 }
