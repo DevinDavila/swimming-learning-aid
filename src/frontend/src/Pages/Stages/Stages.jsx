@@ -1,19 +1,12 @@
 import './Stages.css';
-import logoImg from '../../images/SE-Logo-RGB.png'
+import Logo from '../../Components/Logo/Logo';
 import StageBox from '../../Components/StageBox/StageBox';
 
 function Stages() {
     return (
         <div>
             <div class="top-section">
-                <div class="logo">
-                    <img src={logoImg} alt="SE-logo-icon" class="logo-picture" />
-                    <div class="logo-text">
-                        <div class="logo-blue-text">Swimming</div>
-                        <div class="logo-red-text">Learning</div>
-                        <div class="logo-red-text">Aid</div>
-                    </div>
-                </div>
+                <Logo />
                 <div class="option-container">
                     <div class="results-container">
                         <div class="results-text">Results</div>

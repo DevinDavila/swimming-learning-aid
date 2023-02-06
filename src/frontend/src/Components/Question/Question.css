@@ -1,0 +1,21 @@
+.question-container{
+    height: 250px;
+    width:100%;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.question-box, .question-image-box{
+    background-color: white;
+    height:100%;
+    width: 40%;
+    border-radius: 15px;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Calibri','Arial';
+    font-weight: bold;
+}
