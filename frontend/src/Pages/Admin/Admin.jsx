@@ -27,8 +27,8 @@ function Admin() {
                             <button type="submit" class="btn btn-primary admin-login-submit-button">Login</button>
                         </div>
                         <div class="admin-login-submit-text">
-                            Don't have an account?
-                            <a href="/#" onClick={handleShowSignUp} class="admin-login-submit-text-link">Sign up here</a>
+                            Don't have an account?&nbsp;
+                            <text href="#" onClick={handleShowSignUp} class="admin-login-submit-text-link">Sign up here</text>
                         </div>
                     </form>
                 </div>
@@ -71,8 +71,8 @@ function Admin() {
                         <button type="submit" class="btn btn-primary admin-sign-up-submit-button">Sign up</button>
                     </div>
 
-                    <div class="admin-sign-up-submit-text"> Already have an an account?
-                        <a href="/#" onClick={handleHideSignUp} class="admin-sign-up-submit-text-link">Login here</a>
+                    <div class="admin-sign-up-submit-text"> Already have an an account?&nbsp;
+                        <text onClick={handleHideSignUp} class="admin-sign-up-submit-text-link">Login here</text>
                     </div>
                 </div>
             }
