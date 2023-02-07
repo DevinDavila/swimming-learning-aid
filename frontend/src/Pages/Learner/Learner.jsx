@@ -1,12 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BackButton from '../../Components/BackButton/BackButton';
 import './Learner.css';
+import { useNavigate } from "react-router-dom";
 
 function Learner() {
+    const navigate = useNavigate();
+
     const [signUp, setSignUp] = React.useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleShowSignUp = () => setSignUp(true)
     const handleHideSignUp = () => setSignUp(false);
+
+    const handleLogin = () => {
+        fetch('http://localhost:5000/api/authentication/login', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        })
+        .then((Response) => Response.json())
+        .then((result) => {
+            console.log(result.status)
+            if (result.status === 'success')  {
+              sessionStorage.setItem('token', result.user.token);
+              sessionStorage.setItem('email', email);
+              navigate('/stages');
+            }
+        })
+      }
 
     return (
         <div className='learner-container'>
@@ -17,14 +45,14 @@ function Learner() {
                     <form class="learner-login-form">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address" />
+                            <input type="email" onChange={e => setEmail(e.target.value)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address" />
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            <input type="password" onChange={e => setPassword(e.target.value)} class="form-control" id="exampleInputPassword1" placeholder="Password" />
                         </div>
                         <div class="learner-login-submit-button-container">
-                            <button type="submit" class="btn btn-primary learner-login-submit-button">Login</button>
+                            <button type='button' onClick={handleLogin} class="btn btn-primary learner-login-submit-button">Login</button>
                         </div>
                         <div class="learner-login-submit-text">
                             Don't have an account?&nbsp;
