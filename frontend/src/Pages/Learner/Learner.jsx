@@ -25,16 +25,16 @@ function Learner() {
                 password: password
             })
         })
-        .then((Response) => Response.json())
-        .then((result) => {
-            console.log(result.status)
-            if (result.status === 'success')  {
-              sessionStorage.setItem('token', result.user.token);
-              sessionStorage.setItem('email', email);
-              navigate('/stages');
-            }
-        })
-      }
+            .then((Response) => Response.json())
+            .then((result) => {
+                console.log(result.status)
+                if (result.status === 'success') {
+                    sessionStorage.setItem('token', result.user.token);
+                    sessionStorage.setItem('email', email);
+                    navigate('/stages');
+                }
+            })
+    }
 
     return (
         <div className='learner-container'>

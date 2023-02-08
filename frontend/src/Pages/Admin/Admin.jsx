@@ -1,12 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BackButton from '../../Components/BackButton/BackButton';
 import './Admin.css';
+import { useNavigate } from "react-router-dom";
 
 function Admin() {
+    const navigate = useNavigate();
+
     const [signUp, setSignUp] = React.useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleShowSignUp = () => setSignUp(true)
     const handleHideSignUp = () => setSignUp(false);
+
+    const handleLogin = () => {
+        fetch('http://localhost:5000/api/authentication/login', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        })
+            .then((Response) => Response.json())
+            .then((result) => {
+                console.log(result.status)
+                if (result.status === 'success') {
+                    sessionStorage.setItem('token', result.user.token);
+                    sessionStorage.setItem('email', email);
+                    navigate('/stages');
+                }
+            })
+    }
 
     return (
         <div className='admin-container'>
@@ -17,14 +45,14 @@ function Admin() {
                     <form class="admin-login-form">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address" />
+                            <input type="email" onChange={e => setEmail(e.target.value)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address" />
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            <input type="password" onChange={e => setPassword(e.target.value)} class="form-control" id="exampleInputPassword1" placeholder="Password" />
                         </div>
                         <div class="admin-login-submit-button-container">
-                            <button type="submit" class="btn btn-primary admin-login-submit-button">Login</button>
+                            <button type="button" onClick={handleLogin} class="btn btn-primary admin-login-submit-button">Login</button>
                         </div>
                         <div class="admin-login-submit-text">
                             Don't have an account?&nbsp;
@@ -35,33 +63,33 @@ function Admin() {
                 :
                 <div class="admin-sign-up-main-section">
                     <div class="admin-sign-up-section-title">Admin Sign up</div>
-                        <div class="admin-sign-up-big-section">
-                            <div class="admin-sign-up-left-section">
-                                <form class="admin-sign-up-form">
-                                    <div class="form-group">
-                                        <label for="inputEmailAddress">Email address</label> <div class="admin-required-text"> *</div>
-                                        <input type="email" class="form-control" id="inputEmailAddress" aria-describedby="emailHelp" placeholder="Enter email address"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword">Password</label>   <div class="admin-required-text"> *</div>
-                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputConfirmPassword">Confirm Password</label> <div class="admin-required-text"> *</div>
-                                        <input type="confirmPassword" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password"/>
-                                    </div>
-                                </form>
-                            </div>
+                    <div class="admin-sign-up-big-section">
+                        <div class="admin-sign-up-left-section">
+                            <form class="admin-sign-up-form">
+                                <div class="form-group">
+                                    <label for="inputEmailAddress">Email address</label> <div class="admin-required-text"> *</div>
+                                    <input type="email" class="form-control" id="inputEmailAddress" aria-describedby="emailHelp" placeholder="Enter email address" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword">Password</label>   <div class="admin-required-text"> *</div>
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputConfirmPassword">Confirm Password</label> <div class="admin-required-text"> *</div>
+                                    <input type="confirmPassword" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" />
+                                </div>
+                            </form>
+                        </div>
 
                         <div class="admin-sign-up-right-section">
                             <form class="admin-sign-up-form">
                                 <div class="form-group">
                                     <label for="inputAdminFirstname">Admin Firstname</label> <div class="admin-required-text"> *</div>
-                                    <input type="name" class="form-control" id="inputAdminFirstname" placeholder="e.g. Bob"/>
+                                    <input type="name" class="form-control" id="inputAdminFirstname" placeholder="e.g. Bob" />
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAdminSurname">Admin Surname</label> <div class="admin-required-text"> *</div>
-                                    <input type="name" class="form-control" id="inputAdminSurname" placeholder="e.g. Smith"/>
+                                    <input type="name" class="form-control" id="inputAdminSurname" placeholder="e.g. Smith" />
                                 </div>
                             </form>
                         </div>
