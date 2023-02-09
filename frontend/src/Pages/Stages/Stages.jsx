@@ -5,21 +5,21 @@ import StageBox from '../../Components/StageBox/StageBox';
 function Stages() {
     return (
         <div>
-            <div class="top-section">
+            <div className="top-section">
                 <Logo />
-                <div class="option-container">
-                    <div class="results-container">
-                        <div class="results-text">Results</div>
+                <div className="option-container">
+                    <div className="results-container">
+                        <div className="results-text">Results</div>
                     </div>
-                    <div class="account-container">
-                        <div class="account-text">Account</div>
+                    <div className="account-container">
+                        <div className="account-text">Account</div>
                     </div>
                 </div>
             </div>
 
-            <div class="middle-section">
-                <div class="middle-section-text">Learn to Swim Stages</div>
-                <div class="stages-container">
+            <div className="middle-section">
+                <div className="middle-section-text">Learn to Swim Stages</div>
+                <div className="stages-container">
                     <StageBox name="Stage 1" color="#FF0000" />
                     <StageBox name="Stage 2" color="#F49401" />
                     <StageBox name="Stage 3" color="#FFD817" />
@@ -30,14 +30,14 @@ function Stages() {
                 </div>
             </div>
 
-            <div class="bottom-section">
-                <div class="bottom-section-text">Further Swimming</div>
-                <div class="bottom-section-boxes">
-                    <div class="left-box">
-                        <div class="left-box-text">Job/Career Opportunities</div>
+            <div className="bottom-section">
+                <div className="bottom-section-text">Further Swimming</div>
+                <div className="bottom-section-boxes">
+                    <div className="left-box">
+                        <div className="left-box-text">Job/Career Opportunities</div>
                     </div>
-                    <div class="right-box">
-                        <div class="right-box-text">Club Opportunities</div>
+                    <div className="right-box">
+                        <div className="right-box-text">Club Opportunities</div>
                     </div>
                 </div>
             </div>

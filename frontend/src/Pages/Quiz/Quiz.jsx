@@ -6,17 +6,17 @@ import './Quiz.css';
 function Quiz() {
     return (
         <div className='quiz-container'>
-            <div class="quiz-top-section">
+            <div className="quiz-top-section">
                 <Logo />
-                <div class="option-container">
-                    <div class="back-container">Back home</div>
-                    <div class="results-container">Results</div>
-                    <div class="account-container">Account</div>
+                <div className="option-container">
+                    <div className="back-container">Back home</div>
+                    <div className="results-container">Results</div>
+                    <div className="account-container">Account</div>
                 </div>
             </div>
-            <div class="main-container">
+            <div className="main-container">
                 <Question question="This is a question" image="This is an image" />
-                <div class="answer-container">
+                <div className="answer-container">
                     <Answer answer="Answer One" />
                     <Answer answer="Answer Two" />
                     <Answer answer="Answer Three" />
