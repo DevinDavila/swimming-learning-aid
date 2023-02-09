@@ -49,6 +49,12 @@
 .admin-login-submit-text-link {
     color: #000000;
     font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.admin-login-submit-text-link:hover {
+    color: #0d6efd;
 }
 
 /* Sign up */
@@ -125,6 +131,12 @@
 .admin-sign-up-submit-text-link {
     color: #000000;
     font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.admin-sign-up-submit-text-link:hover {
+    color: #0d6efd;
 }
 
 .admin-required-text{

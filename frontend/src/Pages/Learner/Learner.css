@@ -50,7 +50,14 @@
 .learner-login-submit-text-link {
     color: #000000;
     font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
 }
+
+.learner-login-submit-text-link:hover {
+    color: #0d6efd;
+}
+
 
 /* Sign Up */
 
@@ -128,6 +135,12 @@
 .learner-sign-up-submit-text-link {
     color: #000000;
     font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.learner-sign-up-submit-text-link:hover {
+    color: #0d6efd;
 }
 
 .learner-required-text{

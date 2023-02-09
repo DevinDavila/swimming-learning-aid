@@ -27,8 +27,8 @@ function Learner() {
                             <button type="submit" class="btn btn-primary learner-login-submit-button">Login</button>
                         </div>
                         <div class="learner-login-submit-text">
-                            Don't have an account?
-                            <a href="/#" onClick={handleShowSignUp} class="learner-login-submit-text-link">Sign up here</a>
+                            Don't have an account?&nbsp;
+                            <text onClick={handleShowSignUp} class="learner-login-submit-text-link">Sign up here</text>
                         </div>
                     </form>
                 </div>
@@ -86,8 +86,8 @@ function Learner() {
                             <button type="submit" class="btn btn-primary learner-sign-up-submit-button">Sign up</button>
                         </div>
 
-                        <div class="learner-sign-up-submit-text"> Already have an an account?
-                            <a href="/#" onClick={handleHideSignUp} class="learner-sign-up-submit-text-link">Login here</a>
+                        <div class="learner-sign-up-submit-text"> Already have an an account?&nbsp;
+                            <text onClick={handleHideSignUp} class="learner-sign-up-submit-text-link">Login here</text>
                         </div>
                     </div>
                 </>

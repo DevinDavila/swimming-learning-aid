@@ -1,4 +1,5 @@
 import './Home.css';
+import { Link } from 'react-router-dom';
 import penImg from '../../images/pen-icon.png'
 import swimImg from '../../images/swimming-icon.png'
 
@@ -6,7 +7,7 @@ function Home() {
     return (
         <div className='login-container'>
             <div class="login-sections-container">
-                <a class="login-sections-link" href="/#">
+                <Link class="login-sections-link" to="/admin">
                     <div class="login-left-section">
                         <div class="login-left-section-title">I am an Admin</div>
                         <div class="login-left-section-image-container">
@@ -16,8 +17,8 @@ function Home() {
                         <text class="login-left-section-text">Be able to track your Learners’ progress and
                             figure out their strengths and weaknesses</text>
                     </div>
-                </a>
-                <a class="login-sections-link" href="/#">
+                </Link>
+                <Link class="login-sections-link" to="/learner">
                     <div class="login-right-section">
                         <div class="login-right-section-title">I am a Learner</div>
                         <div class="login-right-section-image-container">
@@ -26,7 +27,7 @@ function Home() {
                         <text class="login-right-section-text">Gain access to a variety of quizzes and information
                             to benefit you and your swimming career</text>
                     </div>
-                </a>
+                </Link>
             </div>
         </div>
     );

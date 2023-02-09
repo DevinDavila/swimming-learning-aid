@@ -1,9 +1,10 @@
 import './BackButton.css';
+import { Link } from 'react-router-dom';
 
-function BackButton(props) {
+function BackButton() {
     return (
         <div className='learner-back-button-container'>
-            <a class="learner-back-button" href="file:///C:/Users/devin/OneDrive/Desktop/Documents/School/Computer%20Science/Visual%20Studio/frontend/html/login-decision.html">Back to decision page</a>
+            <Link class="learner-back-button" to="/">Back to decision page</Link>
         </div>
     );
 }
