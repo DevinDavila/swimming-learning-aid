@@ -42,33 +42,46 @@ function Learner() {
             })
     }
 
-    const handleRegister = () => {
-        if (password != confirmPassword) {
-            console.log("Passwords don't match!")
+    const handleDOBChange = (event) => {
+        const newDate = new Date(event.target.value);
+        if (newDate < dateOfBirth) {
+            setDateOfBirth(newDate);
         } else {
-            fetch('http://localhost:5000/api/authentication/register', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    first_name: firstName,
-                    last_name: lastName,
-                    email: email,
-                    password: password,
-                    type: 'Learner',
-                    date_of_birth: dateOfBirth,
-                    guardian_first_name: guardianFirstName,
-                    guardian_last_name: guardianLastName
+          console.log('Enter a valid DOB')
+        }
+      };
+
+    const handleRegister = () => {
+        if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {
+            console.log('Fill in required fields!')
+        } else {
+            if (password != confirmPassword) {
+                console.log("Passwords don't match!")
+            } else {
+                fetch('http://localhost:5000/api/authentication/register', {
+                    method: 'post',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        first_name: firstName,
+                        last_name: lastName,
+                        email: email,
+                        password: password,
+                        type: 'Learner',
+                        date_of_birth: dateOfBirth,
+                        guardian_first_name: guardianFirstName,
+                        guardian_last_name: guardianLastName
+                    })
                 })
-            })
-                .then((Response) => Response.json())
-                .then((result) => {
-                    if (result.status === 'success') {
-                        console.log(result.status)
-                    }
-                })
+                    .then((Response) => Response.json())
+                    .then((result) => {
+                        if (result.status === 'success') {
+                            console.log(result.status)
+                        }
+                    })
+            }
         }
     }
 
@@ -119,7 +132,7 @@ function Learner() {
                                     </div>
                                     <div class="form-group">
                                         <label for="inputDOB">Enter your Date of Birth</label> <div class="learner-required-text"> *</div>
-                                        <input type="date" value={dateOfBirth.toISOString().substring(0, 10)} onChange={e => setDateOfBirth(new Date(e.target.value))} class="form-control" id="inputDOB" />
+                                        <input type="date" value={dateOfBirth.toISOString().substring(0, 10)} onChange={handleDOBChange} class="form-control" id="inputDOB" />
                                     </div>
                                 </form>
                             </div>
