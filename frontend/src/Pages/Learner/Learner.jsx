@@ -47,9 +47,9 @@ function Learner() {
         if (newDate < dateOfBirth) {
             setDateOfBirth(newDate);
         } else {
-          console.log('Enter a valid DOB')
+            console.log('Enter a valid DOB')
         }
-      };
+    };
 
     const handleRegister = () => {
         if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {

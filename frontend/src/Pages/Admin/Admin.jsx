@@ -39,30 +39,34 @@ function Admin() {
     }
 
     const handleRegister = () => {
-        if (password != confirmPassword) {
-            console.log("Passwords don't match!")
+        if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {
+            console.log('Fill in required fields!')
         } else {
-            fetch('http://localhost:5000/api/authentication/register', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                first_name: firstName,
-                last_name: lastName,
-                email: email,
-                password: password,
-                type: 'Admin',
-                status: 'Pending'
-            })
-        })
-            .then((Response) => Response.json())
-            .then((result) => {
-                if (result.status === 'success') {
-                    console.log(result.status)
-                }
-            })
+            if (password != confirmPassword) {
+                console.log("Passwords don't match!")
+            } else {
+                fetch('http://localhost:5000/api/authentication/register', {
+                    method: 'post',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        first_name: firstName,
+                        last_name: lastName,
+                        email: email,
+                        password: password,
+                        type: 'Admin',
+                        status: 'Pending'
+                    })
+                })
+                    .then((Response) => Response.json())
+                    .then((result) => {
+                        if (result.status === 'success') {
+                            console.log(result.status)
+                        }
+                    })
+            }
         }
     }
 
