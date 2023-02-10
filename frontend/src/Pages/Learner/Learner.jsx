@@ -89,82 +89,82 @@ function Learner() {
         <div className='learner-container'>
             <BackButton />
             {!signUp ?
-                <div class="learner-login-section">
-                    <div class="learner-login-section-title">Learner login</div>
-                    <form class="learner-login-form">
-                        <div class="form-group">
+                <div className="learner-login-section">
+                    <div className="learner-login-section-title">Learner login</div>
+                    <form className="learner-login-form">
+                        <div className="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" onChange={e => setEmail(e.target.value)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address" />
+                            <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address" />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" onChange={e => setPassword(e.target.value)} class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            <input type="password" onChange={e => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1" placeholder="Password" />
                         </div>
-                        <div class="learner-login-submit-button-container">
-                            <button type='button' onClick={handleLogin} class="btn btn-primary learner-login-submit-button">Login</button>
+                        <div className="learner-login-submit-button-container">
+                            <button type='button' onClick={handleLogin} className="btn btn-primary learner-login-submit-button">Login</button>
                         </div>
-                        <div class="learner-login-submit-text">
+                        <div className="learner-login-submit-text">
                             Don't have an account?&nbsp;
-                            <text onClick={handleShowSignUp} class="learner-login-submit-text-link">Sign up here</text>
+                            <text onClick={handleShowSignUp} className="learner-login-submit-text-link">Sign up here</text>
                         </div>
                     </form>
                 </div>
                 :
                 <>
-                    <div class="learner-sign-up-main-section">
-                        <div class="learner-sign-up-section-title">Learner Sign up</div>
+                    <div className="learner-sign-up-main-section">
+                        <div className="learner-sign-up-section-title">Learner Sign up</div>
 
-                        <div class="learner-sign-up-big-section">
+                        <div className="learner-sign-up-big-section">
 
-                            <div class="learner-sign-up-left-section">
-                                <form class="learner-sign-up-form">
-                                    <div class="form-group">
-                                        <label for="inputEmailAddress">Email address</label> <div class="learner-required-text"> *</div>
-                                        <input type="email" onChange={e => setEmail(e.target.value)} class="form-control" id="inputEmailAddress" aria-describedby="emailHelp" placeholder="Enter email address" />
+                            <div className="learner-sign-up-left-section">
+                                <form className="learner-sign-up-form">
+                                    <div className="form-group">
+                                        <label for="inputEmailAddress">Email address</label> <div className="learner-required-text"> *</div>
+                                        <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" id="inputEmailAddress" aria-describedby="emailHelp" placeholder="Enter email address" />
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword">Password</label>   <div class="learner-required-text"> *</div>
-                                        <input type="password" onChange={e => setPassword(e.target.value)} class="form-control" id="inputPassword" placeholder="Password" />
+                                    <div className="form-group">
+                                        <label for="inputPassword">Password</label>   <div className="learner-required-text"> *</div>
+                                        <input type="password" onChange={e => setPassword(e.target.value)} className="form-control" id="inputPassword" placeholder="Password" />
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputConfirmPassword">Confirm Password</label> <div class="learner-required-text"> *</div>
-                                        <input type="password" onChange={e => setConfirmPassword(e.target.value)} class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" />
+                                    <div className="form-group">
+                                        <label for="inputConfirmPassword">Confirm Password</label> <div className="learner-required-text"> *</div>
+                                        <input type="password" onChange={e => setConfirmPassword(e.target.value)} className="form-control" id="inputConfirmPassword" placeholder="Confirm Password" />
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputDOB">Enter your Date of Birth</label> <div class="learner-required-text"> *</div>
-                                        <input type="date" value={dateOfBirth.toISOString().substring(0, 10)} onChange={handleDOBChange} class="form-control" id="inputDOB" />
+                                    <div className="form-group">
+                                        <label for="inputDOB">Enter your Date of Birth</label> <div className="learner-required-text"> *</div>
+                                        <input type="date" value={dateOfBirth.toISOString().substring(0, 10)} onChange={handleDOBChange} className="form-control" id="inputDOB" />
                                     </div>
                                 </form>
                             </div>
 
-                            <div class="learner-sign-up-right-section">
-                                <form class="learner-sign-up-form">
-                                    <div class="form-group">
+                            <div className="learner-sign-up-right-section">
+                                <form className="learner-sign-up-form">
+                                    <div className="form-group">
                                         <label for="inputGuardianFirstname">Guardian Firstname</label>
-                                        <input type="name" onChange={e => setGuardianFirstName(e.target.value)} class="form-control" id="inputGuardianFirstname" placeholder="e.g. Olivia" />
+                                        <input type="name" onChange={e => setGuardianFirstName(e.target.value)} className="form-control" id="inputGuardianFirstname" placeholder="e.g. Olivia" />
                                     </div>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <label for="inputGuardianSurname">Guardian Surname</label>
-                                        <input type="name" onChange={e => setGuardianLastName(e.target.value)} class="form-control" id="inputGuardianSurname" placeholder="e.g. Jones" />
+                                        <input type="name" onChange={e => setGuardianLastName(e.target.value)} className="form-control" id="inputGuardianSurname" placeholder="e.g. Jones" />
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputLearnerFirstname">Learner Firstname</label> <div class="learner-required-text"> *</div>
-                                        <input type="name" onChange={e => setFirstName(e.target.value)} class="form-control" id="inputLearnerFirstname" placeholder="e.g. Bob" />
+                                    <div className="form-group">
+                                        <label for="inputLearnerFirstname">Learner Firstname</label> <div className="learner-required-text"> *</div>
+                                        <input type="name" onChange={e => setFirstName(e.target.value)} className="form-control" id="inputLearnerFirstname" placeholder="e.g. Bob" />
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputLearnerSurname">Learner Surname</label> <div class="learner-required-text"> *</div>
-                                        <input type="name" onChange={e => setLastName(e.target.value)} class="form-control" id="inputLearnerSurname" placeholder="e.g. Smith" />
+                                    <div className="form-group">
+                                        <label for="inputLearnerSurname">Learner Surname</label> <div className="learner-required-text"> *</div>
+                                        <input type="name" onChange={e => setLastName(e.target.value)} className="form-control" id="inputLearnerSurname" placeholder="e.g. Smith" />
                                     </div>
                                 </form>
                             </div>
 
                         </div>
-                        <div class="learner-sign-up-submit-button-container">
-                            <button type="button" onClick={handleRegister} class="btn btn-primary learner-sign-up-submit-button">Sign up</button>
+                        <div className="learner-sign-up-submit-button-container">
+                            <button type="button" onClick={handleRegister} className="btn btn-primary learner-sign-up-submit-button">Sign up</button>
                         </div>
 
-                        <div class="learner-sign-up-submit-text"> Already have an an account?&nbsp;
-                            <text onClick={handleHideSignUp} class="learner-sign-up-submit-text-link">Login here</text>
+                        <div className="learner-sign-up-submit-text"> Already have an an account?&nbsp;
+                            <text onClick={handleHideSignUp} className="learner-sign-up-submit-text-link">Login here</text>
                         </div>
                     </div>
                 </>
