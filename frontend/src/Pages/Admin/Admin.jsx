@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import BackButton from '../../Components/BackButton/BackButton';
 import './Admin.css';
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function Admin() {
     const navigate = useNavigate();
@@ -34,16 +36,18 @@ function Admin() {
                     sessionStorage.setItem('token', result.user.token);
                     sessionStorage.setItem('email', email);
                     navigate('/stages');
+                } else {
+                    wrongLogin();
                 }
             })
     }
 
     const handleRegister = () => {
         if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {
-            console.log('Fill in required fields!')
+            requiredFields();
         } else {
             if (password != confirmPassword) {
-                console.log("Passwords don't match!")
+                passwordsNotMatching();
             } else {
                 fetch('http://localhost:5000/api/authentication/register', {
                     method: 'post',
@@ -63,15 +67,34 @@ function Admin() {
                     .then((Response) => Response.json())
                     .then((result) => {
                         if (result.status === 'success') {
-                            console.log(result.status)
+                            userAdded();
+                        } else {
+                            userExists();
                         }
                     })
             }
         }
     }
 
+    const userAdded = () => toast("User Added Successfully!");
+    const userExists = () => toast("User Already Exists. Try Logging In.");
+    const wrongLogin = () => toast("Wrong Username or Password. Please Try Again.");
+    const requiredFields = () => toast("Fill All Required Fields.");
+    const passwordsNotMatching = () => toast("Passwords Do Not Match.");
+
     return (
         <div className='admin-container'>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                draggable={false}
+                pauseOnHover={false}
+                theme="light"
+            />
             <BackButton />
             {!signUp ?
                 <div className="admin-login-section">
