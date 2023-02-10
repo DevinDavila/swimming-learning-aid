@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import BackButton from '../../Components/BackButton/BackButton';
 import './Learner.css';
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function Learner() {
     const navigate = useNavigate();
@@ -33,11 +35,12 @@ function Learner() {
         })
             .then((Response) => Response.json())
             .then((result) => {
-                console.log(result.status)
                 if (result.status === 'success') {
                     sessionStorage.setItem('token', result.user.token);
                     sessionStorage.setItem('email', email);
                     navigate('/stages');
+                } else {
+                    wrongLogin();
                 }
             })
     }
@@ -47,16 +50,16 @@ function Learner() {
         if (newDate < dateOfBirth) {
             setDateOfBirth(newDate);
         } else {
-            console.log('Enter a valid DOB')
+            validDOB();
         }
     };
 
     const handleRegister = () => {
         if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {
-            console.log('Fill in required fields!')
+            requiredFields();
         } else {
             if (password != confirmPassword) {
-                console.log("Passwords don't match!")
+                passwordsNotMatching();
             } else {
                 fetch('http://localhost:5000/api/authentication/register', {
                     method: 'post',
@@ -78,15 +81,35 @@ function Learner() {
                     .then((Response) => Response.json())
                     .then((result) => {
                         if (result.status === 'success') {
-                            console.log(result.status)
+                            userAdded();
+                        } else {
+                            userExists();
                         }
                     })
             }
         }
     }
 
+    const userAdded = () => toast("User Added Successfully!");
+    const userExists = () => toast("User Already Exists. Try Logging In.");
+    const wrongLogin = () => toast("Wrong Username or Password. Please Try Again.");
+    const requiredFields = () => toast("Fill All Required Fields.");
+    const passwordsNotMatching = () => toast("Passwords Do Not Match.");
+    const validDOB = () => toast("Enter a Valid Date of Birth.");
+
     return (
         <div className='learner-container'>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                draggable={false}
+                pauseOnHover={false}
+                theme="light"
+            />
             <BackButton />
             {!signUp ?
                 <div className="learner-login-section">
