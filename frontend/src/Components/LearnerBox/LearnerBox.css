@@ -1,0 +1,18 @@
+.Learner-box {
+    background-color: white;
+    height: 100px;
+    width: 980px;
+    display:flex;
+    align-items: center;
+    border-radius: 15px;
+    border: black solid;
+    margin-bottom: 5px;
+}
+
+.Learner-box-text{
+    color: black;
+    text-align: left;
+    font-size: 24px;
+    font-family: 'Calibri','Arial';
+    margin-left: 5px;
+}
