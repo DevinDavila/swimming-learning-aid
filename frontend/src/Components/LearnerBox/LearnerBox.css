@@ -9,19 +9,12 @@
     margin-bottom: 5px;
 }
 
-.Learner-box-text{
-    color: black;
-    text-align: left;
-    font-size: 24px;
-    font-family: 'Calibri','Arial';
-    margin-left: 5px;
-}
-
 .table-row{
     display: table;
     width: 98%;
     height: 50px;
     border-radius: 15px;
+    color: black;
     font-size: 24px;
     font-family: 'Calibri','Arial';
     font-weight: bold;
