@@ -16,3 +16,23 @@
     font-family: 'Calibri','Arial';
     margin-left: 5px;
 }
+
+.table-row{
+    display: table;
+    width: 98%;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 24px;
+    font-family: 'Calibri','Arial';
+    font-weight: bold;
+
+}
+
+.table-cell{
+    display: table-cell;
+    width: 20%;
+    text-align: center;
+    border-right: 3px solid white;
+    vertical-align: middle;
+}
+

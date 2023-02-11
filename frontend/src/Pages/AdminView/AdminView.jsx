@@ -9,9 +9,14 @@ function AdminView() {
                     <div className='view-title-text'>Admin View</div>
                 </div>
                 <div className='line'></div>
-                <LearnerBox Firstname="Blaaaaaa" />
-                <LearnerBox name="Blaaaaaa" />
-                <LearnerBox name="Blaaaaaa" />
+
+                <div className="main-table-row">
+                    <div className="main-table-cell">First name</div>
+                    <div className="main-table-cell">Surname</div>
+                    <div className="main-table-cell">Date of birth</div>
+                </div>
+                <LearnerBox Firstname="Blaaaaaa" Surname="yay" DOB="12/12/2002"/>
+                <LearnerBox Firstname="Blaaaaaa" Surname="yay" DOB="12/12/2002"/>
             </div>
         </div>
     );
