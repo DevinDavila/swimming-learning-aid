@@ -42,4 +42,20 @@ export default class UserDAO {
             return { usersList: [], totalNumberOfUsers: 0 }
         } 
     }
+
+    static async getUserById(id) {
+        try {
+            const pipeline = [
+                {
+                    $match: {
+                        _id: new ObjectId(id)
+                    }
+                }
+            ]
+            return await users.aggregate(pipeline).next();
+        } catch (e) {
+            console.error(`Something went wrong in getUserById: ${e}`);
+            throw e;
+        }
+    }
 }
