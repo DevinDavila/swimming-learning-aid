@@ -36,6 +36,7 @@ function AdminView() {
         setResults(true);
         handleFetchLearner(learner);
     }
+    const handleHideSelectedLearner = () => setResults(false);
 
     const handleFetchLearner = (learner) => {
         fetch(`http://localhost:5000/api/users/getLearnerById/${learner._id}`, {
@@ -77,8 +78,9 @@ function AdminView() {
                     )) : null}
                 </div>
                 :
-                <div style={{ color: '#fff', fontSize: '30px', border: '5px solid white', height: '90px', padding: '20px' }}>
-                    {fetchedLearner.first_name}
+                <div style={{ color: '#fff', fontSize: '30px', border: '5px solid white', height: '90px', padding: '20px', marginBottom: '70px' }}>
+                    <p>{fetchedLearner.first_name}</p>
+                    <button style={{ marginTop: '30px' }} onClick={handleHideSelectedLearner}>back</button>
                 </div>}
         </div>
     );
