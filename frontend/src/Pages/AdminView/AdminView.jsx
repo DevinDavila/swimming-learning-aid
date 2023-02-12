@@ -79,7 +79,7 @@ function AdminView() {
                 </div>
                 :
                 <div style={{ color: '#fff', fontSize: '30px', border: '5px solid white', height: '90px', padding: '20px', marginBottom: '70px' }}>
-                    <p>{fetchedLearner.first_name}</p>
+                    <p>{`${fetchedLearner.first_name}'s Results`}</p>
                     <button style={{ marginTop: '30px' }} onClick={handleHideSelectedLearner}>back</button>
                 </div>}
         </div>
