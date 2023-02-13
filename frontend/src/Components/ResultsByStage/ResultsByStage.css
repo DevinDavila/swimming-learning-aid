@@ -1,0 +1,118 @@
+.results-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    height: 552px;
+}
+
+.results-section {
+    width: 800px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    align-items: center;
+}
+
+
+/* Top section */
+.results-top-section{
+    display: flex;
+    height: 100px;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.results-title-box{
+    display: flex;
+    height: 60px;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.results-title-text{
+    color: #000000;
+    text-align: left;
+    font-size: 40px;
+    font-family: 'Calibri','Arial';
+    font-weight: bold;
+}
+
+.stage-text-box{
+    display: flex;
+    height: 60px;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: right;
+}
+
+.stage-text{
+    color: #000000;
+    font-size: 40px;
+    font-family: 'Calibri','Arial';
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+
+/* Line */
+.line{
+    background-color: #626262;
+    width:100%;
+    height:2px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+
+/* Middle section */
+.results-middle-section{
+    display: flex;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+.info-box1{
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.info-box2{
+    width: 60%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.attempts-box, .high-score-box, .last-attempt-date-box, .last-attempt-score-box{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000000;
+    font-size: 25px;
+}
+
+.progress-box{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000000;
+    font-size: 25px;
+}
