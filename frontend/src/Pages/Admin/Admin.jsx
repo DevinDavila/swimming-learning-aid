@@ -35,7 +35,7 @@ function Admin() {
                 if (result.status === 'success') {
                     sessionStorage.setItem('token', result.user.token);
                     sessionStorage.setItem('email', email);
-                    navigate('/stages');
+                    navigate('/adminView');
                 } else {
                     wrongLogin();
                 }

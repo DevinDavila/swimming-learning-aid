@@ -21,7 +21,7 @@ export default class UserDAO {
     static async getAllUsers({} = {}) {
         let query;
 
-        query = {"type": { $eq: "learner" }}
+        query = {"type": { $eq: "Learner" }}
 
         let cursor;
 
@@ -41,5 +41,21 @@ export default class UserDAO {
             console.error(`Unable to convert cursor to array or problem counting documents, ${e}`);
             return { usersList: [], totalNumberOfUsers: 0 }
         } 
+    }
+
+    static async getUserById(id) {
+        try {
+            const pipeline = [
+                {
+                    $match: {
+                        _id: new ObjectId(id)
+                    }
+                }
+            ]
+            return await users.aggregate(pipeline).next();
+        } catch (e) {
+            console.error(`Something went wrong in getUserById: ${e}`);
+            throw e;
+        }
     }
 }
