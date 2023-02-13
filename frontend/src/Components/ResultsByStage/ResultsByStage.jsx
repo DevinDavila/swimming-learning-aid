@@ -1,6 +1,6 @@
-import './Results.css';
+import './ResultsByStage.css';
 
-function AdminView() {
+function Results() {
     return (
         <div className='results-container'>
             <div className='results-section'>
@@ -34,4 +34,4 @@ function AdminView() {
     );
 }
 
-export default AdminView;
+export default Results;
