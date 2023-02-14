@@ -3,7 +3,7 @@ import LearnerBox from '../../Components/LearnerBox/LearnerBox';
 
 function Results() {
     return (
-        <div className='results-container'>
+        <div className='results-page-container'>
             <div className='results-table'>
                 <div className='results-title-box'>
                     <div className='results-title-text'>Results for ***student full name***</div>

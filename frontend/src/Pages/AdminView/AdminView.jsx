@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './AdminView.css';
 import LearnerBox from '../../Components/LearnerBox/LearnerBox';
+import Results from '../../Components/Results/Results';
 
 function AdminView() {
     const [fetchedLearners, setFetchedLearners] = React.useState([]);
@@ -78,10 +79,12 @@ function AdminView() {
                     )) : null}
                 </div>
                 :
-                <div style={{ color: '#fff', fontSize: '30px', border: '5px solid white', height: '90px', padding: '20px', marginBottom: '70px' }}>
-                    <p>{`${fetchedLearner.first_name}'s Results`}</p>
-                    <button style={{ marginTop: '30px' }} onClick={handleHideSelectedLearner}>back</button>
-                </div>}
+                // <div style={{ color: '#fff', fontSize: '30px', border: '5px solid white', height: '90px', padding: '20px', marginBottom: '70px' }}>
+                //     <p>{`${fetchedLearner.first_name}'s Results`}</p>
+                //     <button style={{ marginTop: '30px' }} onClick={handleHideSelectedLearner}>back</button>
+                // </div>
+                <Results />
+                }
         </div>
     );
 }
