@@ -47,17 +47,17 @@ function AdminView() {
                 'Content-Type': 'application/json',
             }
         })
-        .then((Response) => Response.json())
-        .then (data => {
-            setFetchedLearner(data);
+            .then((Response) => Response.json())
+            .then(data => {
+                setFetchedLearner(data);
 
-            // Used to update state immediately.
-            setFetchedLearner((state) => {
-                console.log(state);
-                
-                return state;
+                // Used to update state immediately.
+                setFetchedLearner((state) => {
+                    console.log(state);
+
+                    return state;
+                });
             });
-        });
     }
 
     return (
@@ -79,12 +79,8 @@ function AdminView() {
                     )) : null}
                 </div>
                 :
-                // <div style={{ color: '#fff', fontSize: '30px', border: '5px solid white', height: '90px', padding: '20px', marginBottom: '70px' }}>
-                //     <p>{`${fetchedLearner.first_name}'s Results`}</p>
-                //     <button style={{ marginTop: '30px' }} onClick={handleHideSelectedLearner}>back</button>
-                // </div>
-                <Results />
-                }
+                <Results FirstName={fetchedLearner.first_name} LastName={fetchedLearner.last_name} clickHideResults={handleHideSelectedLearner} />
+            }
         </div>
     );
 }

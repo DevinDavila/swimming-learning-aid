@@ -21,6 +21,7 @@
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
+    justify-content: space-between;
 }
 
 .results-title-text {
@@ -30,6 +31,14 @@
     font-family: 'Calibri', 'Arial';
     font-weight: bold;
     margin-left: 15px;
+}
+
+.results-title-x {
+    font-size: 40px;
+    font-family: 'Calibri', 'Arial';
+    font-weight: bold;
+    margin-right: 30px;
+    cursor: pointer;
 }
 
 /* Line */

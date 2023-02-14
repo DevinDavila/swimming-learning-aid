@@ -7,6 +7,7 @@
     border-radius: 15px;
     border: black solid;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .table-row{
