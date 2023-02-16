@@ -1,0 +1,32 @@
+.stage-results-box-container {
+    background-color: white;
+    height: 100px;
+    width: 980px;
+    display:flex;
+    align-items: center;
+    border-radius: 15px;
+    border: black solid;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.stage-results-box-table-row {
+    display: table;
+    width: 98%;
+    height: 50px;
+    border-radius: 15px;
+    color: black;
+    font-size: 24px;
+    font-family: 'Calibri','Arial';
+    font-weight: bold;
+
+}
+
+.stage-results-box-table-cell {
+    display: table-cell;
+    width: 20%;
+    text-align: center;
+    border-right: 3px solid white;
+    vertical-align: middle;
+}
+

@@ -23,13 +23,6 @@ function AdminView() {
             .then((Response) => Response.json())
             .then(data => {
                 setFetchedLearners(data.users);
-
-                // Used to update state immediately.
-                setFetchedLearners((state) => {
-                    console.log(state);
-
-                    return state;
-                });
             });
     }
 
@@ -50,13 +43,6 @@ function AdminView() {
             .then((Response) => Response.json())
             .then(data => {
                 setFetchedLearner(data);
-
-                // Used to update state immediately.
-                setFetchedLearner((state) => {
-                    console.log(state);
-
-                    return state;
-                });
             });
     }
 
@@ -75,12 +61,17 @@ function AdminView() {
                         <div className="main-table-cell">Date of birth</div>
                     </div>
                     {Array.isArray(fetchedLearners) ? fetchedLearners.map((learner) => (
-                        <LearnerBox Firstname={learner.first_name} Surname={learner.last_name} DOB={new Date(learner.date_of_birth).toLocaleDateString()} onClick={() => handleShowSelectedLearner(learner)} />
+                        <LearnerBox key={learner._id} Firstname={learner.first_name} Surname={learner.last_name} DOB={new Date(learner.date_of_birth).toLocaleDateString()} onClick={() => handleShowSelectedLearner(learner)} />
                     )) : null}
                 </div>
                 :
-                <Results FirstName={fetchedLearner.first_name} LastName={fetchedLearner.last_name} clickHideResults={handleHideSelectedLearner} />
+                <>
+                    {Object.keys(fetchedLearner).length > 0 ?
+                        <Results key={fetchedLearner._id} FirstName={fetchedLearner.first_name} LastName={fetchedLearner.last_name} learnerId={fetchedLearner._id} clickHideResults={handleHideSelectedLearner} />
+                        : null}
+                </>
             }
+            {/* <ResultsByStage /> */}
         </div>
     );
 }
