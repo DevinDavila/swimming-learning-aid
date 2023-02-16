@@ -22,7 +22,6 @@
     margin-top: 40px;
     margin-bottom: 15px;
     font-size: 40px;
-    font-family: 'Calibri','Arial';
     font-weight: bold;
 }
 
@@ -103,7 +102,7 @@
     margin-bottom: 15px;
     margin-left: 40px;
     font-size: 40px;
-    font-family: 'Calibri','Arial';
+    
     font-weight: bold;
 }
 
@@ -142,6 +141,6 @@
 .admin-required-text{
     color: red;
     font-size: 17px;
-    font-family: 'Calibri','Arial';
+    
     display: inline-block;
 }
