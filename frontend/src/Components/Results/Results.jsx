@@ -63,7 +63,7 @@ function Results(props) {
                     <div className="results-main-table-cell">Highest Score</div>
                 </div>
                 {Array.isArray(fetchedResults) ? fetchedResults.map((result) => (
-                    <StageResultsBox key={result.stage} stage={result.stage} attempts={result.attempts} highestScore={result.highestScore} onClick={() => handleShowSelectedStage(stage)} />
+                    <StageResultsBox key={result.stage} stage={result.stage} attempts={result.attempts} highestScore={result.highestScore} onClick={() => handleShowSelectedStage(result.stage)} />
                 )) : <div>NOTHING</div>}
             </div>
             :
