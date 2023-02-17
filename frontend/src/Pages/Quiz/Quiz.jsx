@@ -26,7 +26,23 @@ function Quiz() {
         })
             .then((Response) => Response.json())
             .then(data => {
-                setQuestions(data.sort(() => Math.random() - 0.5).slice(0, 2));
+                const questionsToDisplay = data.sort(() => Math.random() - 0.5).slice(0, 2);
+
+                questionsToDisplay.forEach((question) => {
+                    fetch(`http://localhost:5000/api/answers/answersByQuestionId/${question._id}`, {
+                        method: 'get',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                        }
+                    })
+                        .then((response) => response.json())
+                        .then((answers) => {
+                            question.answers = answers;
+
+                            setQuestions(questionsToDisplay);
+                        });
+                });
             });
     }
 
@@ -48,14 +64,18 @@ function Quiz() {
                 </div>
             </div>
             <div className="main-container">
-            {Array.isArray(questions) && questions.length > 0 ?
-                <Question question={questions[currentQuestion].value} image="This is an image" /> : null}
-                <div className="answer-container">
-                    <Answer answer="Answer One" onClick={handleAnswerSelect} />
-                    <Answer answer="Answer Two" onClick={handleAnswerSelect} />
-                    <Answer answer="Answer Three" onClick={handleAnswerSelect} />
-                    <Answer answer="Answer Four" onClick={handleAnswerSelect} />
-                </div>
+                {Array.isArray(questions) && questions.length > 0 ?
+                    <div>
+                        <Question question={questions[currentQuestion].value} image="This is an image" />
+                        <div className="answer-container">
+                            <Answer answer={questions[currentQuestion].answers[0].value} onClick={handleAnswerSelect} />
+                            <Answer answer="Answer Two" onClick={handleAnswerSelect} />
+                            <Answer answer="Answer Three" onClick={handleAnswerSelect} />
+                            <Answer answer="Answer Four" onClick={handleAnswerSelect} />
+                        </div>
+                    </div>
+                    : null
+                }
             </div>
         </div>
     );
