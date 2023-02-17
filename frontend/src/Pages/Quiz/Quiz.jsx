@@ -7,6 +7,7 @@ import './Quiz.css';
 
 function Quiz() {
     const [questions, setQuestions] = useState([]);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
 
     const { state } = useLocation();
     const { stage } = state;
@@ -29,6 +30,13 @@ function Quiz() {
             });
     }
 
+    const handleAnswerSelect = () => {
+        if (currentQuestion === 1) {
+            console.log('END OF QUIZ!')
+        } else
+            setCurrentQuestion(currentQuestion + 1);
+    }
+
     return (
         <div className='quiz-container'>
             <div className="quiz-top-section">
@@ -40,13 +48,13 @@ function Quiz() {
                 </div>
             </div>
             <div className="main-container">
-            {Array.isArray(questions) && questions.length >= 2 ?
-                <Question question={questions[1].value} image="This is an image" /> : null}
+            {Array.isArray(questions) && questions.length > 0 ?
+                <Question question={questions[currentQuestion].value} image="This is an image" /> : null}
                 <div className="answer-container">
-                    <Answer answer="Answer One" />
-                    <Answer answer="Answer Two" />
-                    <Answer answer="Answer Three" />
-                    <Answer answer="Answer Four" />
+                    <Answer answer="Answer One" onClick={handleAnswerSelect} />
+                    <Answer answer="Answer Two" onClick={handleAnswerSelect} />
+                    <Answer answer="Answer Three" onClick={handleAnswerSelect} />
+                    <Answer answer="Answer Four" onClick={handleAnswerSelect} />
                 </div>
             </div>
         </div>
