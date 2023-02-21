@@ -1,11 +1,11 @@
-.results-container{
+.results-by-stage-container{
     display: flex;
     justify-content: center;
     margin-top: 50px;
     height: 552px;
 }
 
-.results-section {
+.results-by-stage-section {
     width: 800px;
     border-radius: 15px;
     display: flex;
@@ -17,14 +17,14 @@
 
 
 /* Top section */
-.results-top-section{
+.results-by-stage-top-section{
     display: flex;
     height: 100px;
     width: 90%;
     justify-content: space-between;
 }
 
-.results-title-box{
+.results-by-stage-title-box{
     display: flex;
     height: 60px;
     width: 200px;
@@ -32,7 +32,7 @@
     margin-bottom: 20px;
 }
 
-.results-title-text{
+.results-by-stage-title-text{
     color: #000000;
     text-align: left;
     font-size: 40px;
@@ -67,7 +67,7 @@
 
 
 /* Middle section */
-.results-middle-section{
+.results-by-stage-middle-section{
     display: flex;
     width: 100%;
     display: flex;

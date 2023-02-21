@@ -1,4 +1,4 @@
-.Learner-box {
+.stage-results-box-container {
     background-color: white;
     height: 100px;
     width: 980px;
@@ -10,17 +10,19 @@
     cursor: pointer;
 }
 
-.table-row{
+.stage-results-box-table-row {
     display: table;
     width: 98%;
     height: 50px;
     border-radius: 15px;
     color: black;
     font-size: 24px;
+    font-family: 'Calibri','Arial';
     font-weight: bold;
+
 }
 
-.table-cell{
+.stage-results-box-table-cell {
     display: table-cell;
     width: 20%;
     text-align: center;

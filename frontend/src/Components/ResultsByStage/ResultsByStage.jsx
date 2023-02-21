@@ -1,13 +1,13 @@
 import './ResultsByStage.css';
 
-function Results() {
+function ResultsByStage() {
     return (
-        <div className='results-container'>
-            <div className='results-section'>
+        <div className='results-by-stage-container'>
+            <div className='results-by-stage-section'>
 
-                <div className='results-top-section'>
-                    <div className='results-title-box'>
-                        <div className='results-title-text'> Results </div>
+                <div className='results-by-stage-top-section'>
+                    <div className='results-by-stage-title-box'>
+                        <div className='results-by-stage-title-text'> Results </div>
                     </div>
                     <div className='stage-text-box'>
                         <div className='stage-text'> Stage X </div>
@@ -16,7 +16,7 @@ function Results() {
                 
                 <div className='line'></div>
                 
-                <div className='results-middle-section'>
+                <div className='results-by-stage-middle-section'>
                     <div className='progress-box'> Progress </div>
 
                     <div className='info-box1'>
@@ -34,4 +34,4 @@ function Results() {
     );
 }
 
-export default Results;
+export default ResultsByStage;
