@@ -46,11 +46,19 @@ function Quiz() {
             });
     }
 
-    const handleAnswerSelect = () => {
+    const handleAnswerSelect = (correctAnswer) => {
+        if (correctAnswer === "true")
+            console.log("Correct Answer")
+        else
+            console.log("Wrong Answer")
+
         if (currentQuestion === 1) {
             console.log('END OF QUIZ!')
-        } else
-            setCurrentQuestion(currentQuestion + 1);
+        } else {
+            setTimeout(() => {
+                setCurrentQuestion(currentQuestion + 1);
+            }, 1000);
+        }
     }
 
     return (
@@ -68,10 +76,10 @@ function Quiz() {
                     <div>
                         <Question question={questions[currentQuestion].value} image="This is an image" />
                         <div className="answer-container">
-                            <Answer answer={questions[currentQuestion].answers[0].value} onClick={handleAnswerSelect} />
-                            <Answer answer="Answer Two" onClick={handleAnswerSelect} />
-                            <Answer answer="Answer Three" onClick={handleAnswerSelect} />
-                            <Answer answer="Answer Four" onClick={handleAnswerSelect} />
+                            <Answer answer={questions[currentQuestion].answers[0].value} onClick={() => handleAnswerSelect(questions[currentQuestion].answers[0].correct)} />
+                            <Answer answer={questions[currentQuestion].answers[1].value} onClick={() => handleAnswerSelect(questions[currentQuestion].answers[0].correct)} />
+                            <Answer answer={questions[currentQuestion].answers[2].value} onClick={() => handleAnswerSelect(questions[currentQuestion].answers[0].correct)} />
+                            <Answer answer={questions[currentQuestion].answers[3].value} onClick={() => handleAnswerSelect(questions[currentQuestion].answers[0].correct)} />
                         </div>
                     </div>
                     : null
