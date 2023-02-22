@@ -8,6 +8,8 @@ import './Quiz.css';
 function Quiz() {
     const [questions, setQuestions] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [complete, setComplete] = useState(false);
+    const [correctAnswers, setCorrectAnswers] = useState(0);
 
     const { state } = useLocation();
     const { stage } = state;
@@ -48,12 +50,12 @@ function Quiz() {
 
     const handleAnswerSelect = (correctAnswer) => {
         if (correctAnswer)
-            console.log("Correct Answer")
-        else
-            console.log("Wrong Answer")
+            setCorrectAnswers(correctAnswers + 1);
 
         if (currentQuestion === 3) {
-            console.log('END OF QUIZ!')
+            setTimeout(() => {
+                setComplete(true);
+            }, 1000);
         } else {
             setTimeout(() => {
                 setCurrentQuestion(currentQuestion + 1);
@@ -63,52 +65,36 @@ function Quiz() {
 
     return (
         <div className='quiz-container'>
-            <div className="quiz-top-section">
-                <Logo />
-                <div className="option-container">
-                    <div className="back-container">Back home</div>
-                    <div className="results-container">Results</div>
-                    <div className="account-container">Account</div>
-                </div>
-            </div>
-            <div className="main-container">
-                {Array.isArray(questions) && questions.length > 0 ?
-                    <div>
-                        <Question question={questions[currentQuestion].value} image="This is an image" />
-                        <div className="answer-container">
-                            {Array.isArray(questions[currentQuestion].answers) ? questions[currentQuestion].answers.map((answer, index) => (
-                                <Answer
-                                    key={index}
-                                    answer={answer.value}
-                                    isCorrect={answer.correct}
-                                    onClick={() => handleAnswerSelect(answer.correct)}
-                                />
-                            )) : null}
-                            {/* <Answer
-                                answer={questions[currentQuestion].answers[0].value}
-                                isCorrect={questions[currentQuestion].answers[0].correct}
-                                onClick={() => handleAnswerSelect(questions[currentQuestion].answers[0].correct)}
-                            />
-                            <Answer
-                                answer={questions[currentQuestion].answers[1].value}
-                                isCorrect={questions[currentQuestion].answers[1].correct}
-                                onClick={() => handleAnswerSelect(questions[currentQuestion].answers[1].correct)}
-                            />
-                            <Answer
-                                answer={questions[currentQuestion].answers[2].value}
-                                isCorrect={questions[currentQuestion].answers[2].correct}
-                                onClick={() => handleAnswerSelect(questions[currentQuestion].answers[2].correct)}
-                            />
-                            <Answer
-                                answer={questions[currentQuestion].answers[3].value}
-                                isCorrect={questions[currentQuestion].answers[3].correct}
-                                onClick={() => handleAnswerSelect(questions[currentQuestion].answers[3].correct)}
-                            /> */}
+            {!complete ?
+                <>
+                    <div className="quiz-top-section">
+                        <Logo />
+                        <div className="option-container">
+                            <div className="back-container">Back home</div>
+                            <div className="results-container">Results</div>
+                            <div className="account-container">Account</div>
                         </div>
                     </div>
-                    : null
-                }
-            </div>
+                    <div className="main-container">
+                        {Array.isArray(questions) && questions.length > 0 ?
+                            <div>
+                                <Question question={questions[currentQuestion].value} image="This is an image" />
+                                <div className="answer-container">
+                                    {Array.isArray(questions[currentQuestion].answers) ? questions[currentQuestion].answers.map((answer, index) => (
+                                        <Answer
+                                            key={index}
+                                            answer={answer.value}
+                                            isCorrect={answer.correct}
+                                            onClick={() => handleAnswerSelect(answer.correct)}
+                                        />
+                                    )) : null}
+                                </div>
+                            </div>
+                            : null
+                        }
+                    </div>
+                </> :
+                <div>{`QUIZ COMPLETED: ${correctAnswers}/${questions.length}`}</div>}
         </div>
     );
 }
