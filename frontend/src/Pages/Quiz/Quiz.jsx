@@ -26,7 +26,7 @@ function Quiz() {
         })
             .then((Response) => Response.json())
             .then(data => {
-                const questionsToDisplay = data.sort(() => Math.random() - 0.5).slice(0, 2);
+                const questionsToDisplay = data.sort(() => Math.random() - 0.5).slice(0, 4);
 
                 questionsToDisplay.forEach((question) => {
                     fetch(`http://localhost:5000/api/answers/answersByQuestionId/${question._id}`, {
@@ -47,12 +47,12 @@ function Quiz() {
     }
 
     const handleAnswerSelect = (correctAnswer) => {
-        if (correctAnswer === "true")
+        if (correctAnswer)
             console.log("Correct Answer")
         else
             console.log("Wrong Answer")
 
-        if (currentQuestion === 1) {
+        if (currentQuestion === 3) {
             console.log('END OF QUIZ!')
         } else {
             setTimeout(() => {
@@ -76,10 +76,34 @@ function Quiz() {
                     <div>
                         <Question question={questions[currentQuestion].value} image="This is an image" />
                         <div className="answer-container">
-                            <Answer answer={questions[currentQuestion].answers[0].value} onClick={() => handleAnswerSelect(questions[currentQuestion].answers[0].correct)} />
-                            <Answer answer={questions[currentQuestion].answers[1].value} onClick={() => handleAnswerSelect(questions[currentQuestion].answers[0].correct)} />
-                            <Answer answer={questions[currentQuestion].answers[2].value} onClick={() => handleAnswerSelect(questions[currentQuestion].answers[0].correct)} />
-                            <Answer answer={questions[currentQuestion].answers[3].value} onClick={() => handleAnswerSelect(questions[currentQuestion].answers[0].correct)} />
+                            {Array.isArray(questions[currentQuestion].answers) ? questions[currentQuestion].answers.map((answer, index) => (
+                                <Answer
+                                    key={index}
+                                    answer={answer.value}
+                                    isCorrect={answer.correct}
+                                    onClick={() => handleAnswerSelect(answer.correct)}
+                                />
+                            )) : null}
+                            {/* <Answer
+                                answer={questions[currentQuestion].answers[0].value}
+                                isCorrect={questions[currentQuestion].answers[0].correct}
+                                onClick={() => handleAnswerSelect(questions[currentQuestion].answers[0].correct)}
+                            />
+                            <Answer
+                                answer={questions[currentQuestion].answers[1].value}
+                                isCorrect={questions[currentQuestion].answers[1].correct}
+                                onClick={() => handleAnswerSelect(questions[currentQuestion].answers[1].correct)}
+                            />
+                            <Answer
+                                answer={questions[currentQuestion].answers[2].value}
+                                isCorrect={questions[currentQuestion].answers[2].correct}
+                                onClick={() => handleAnswerSelect(questions[currentQuestion].answers[2].correct)}
+                            />
+                            <Answer
+                                answer={questions[currentQuestion].answers[3].value}
+                                isCorrect={questions[currentQuestion].answers[3].correct}
+                                onClick={() => handleAnswerSelect(questions[currentQuestion].answers[3].correct)}
+                            /> */}
                         </div>
                     </div>
                     : null
