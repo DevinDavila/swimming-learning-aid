@@ -83,4 +83,19 @@ export default class UserDAO {
             return { usersList: [], totalNumberOfUsers: 0 }
         } 
     }
+
+    static async updateAdminStatus(userId, status) {
+        try {
+            const updateResponse = await users.updateOne(
+                { _id: ObjectId(userId) },
+                { $set: { status: status } }
+            );
+ 
+            return updateResponse;
+        } catch (e) {
+            console.error(`Unable to update user in DAO: ${e}`);
+        
+        return { error: e };
+        }
+    }
 }
