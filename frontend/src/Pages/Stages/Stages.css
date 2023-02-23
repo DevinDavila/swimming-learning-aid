@@ -24,8 +24,7 @@
 .results-text{
     color: white;
     text-align: center;
-    font-size: 32px;
-    font-family: 'Calibri','Arial';
+    font-size: 28px;
     font-weight: bold;
 }
 
@@ -37,8 +36,7 @@
 .account-text{
     color: white;
     text-align: center;
-    font-size: 32px;
-    font-family: 'Calibri','Arial';
+    font-size: 28px;
     font-weight: bold;
 }
 
@@ -52,8 +50,8 @@
 .middle-section-text{
     color: white;
     text-align: left;
-    font-size: 32px;
-    font-family: 'Calibri','Arial';
+    font-size: 28px;
+    
     font-weight: bold;
     margin-left: 10px;
 }
@@ -68,26 +66,26 @@
 
 .bottom-section{
     width:100%;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .bottom-section-text{
     color: white;
     text-align: left;
-    font-size: 32px;
-    font-family: 'Calibri','Arial';
+    font-size: 28px;
     font-weight: bold;
     margin-left: 10px;
 }
 
 .bottom-section-boxes{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 90%;
 }
 
 .left-box{
     background-color: white;
-    height:130px;
+    height: 120px;
     width: 720px;
     border-radius: 15px;
     display:flex;
@@ -99,15 +97,14 @@
 .left-box-text{
     color: black;
     text-align: center;
-    font-size: 42px;
-    font-family: 'Calibri','Arial';
+    font-size: 40px;
     font-weight: bold;
     margin-left: 30px;
 }
 
 .right-box{
     background-color: white;
-    height:130px;
+    height:120px;
     width: 720px;
     border-radius: 15px;
     display:flex;
@@ -120,8 +117,7 @@
 .right-box-text{
     color: black;
     text-align: center;
-    font-size: 42px;
-    font-family: 'Calibri','Arial';
+    font-size: 40px;
     font-weight: bold;
     margin-left: 30px;
 }

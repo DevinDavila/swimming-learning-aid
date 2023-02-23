@@ -5,6 +5,7 @@ import Learner from './Pages/Learner/Learner';
 import Quiz from './Pages/Quiz/Quiz';
 import Stages from './Pages/Stages/Stages';
 import AdminView from './Pages/AdminView/AdminView';
+import AdminAuthorise from './Pages/AdminAuthorise/AdminAuthorise';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/quiz" element={<Quiz />} />
       <Route path="/stages" element={<Stages />} />
       <Route path="/AdminView" element={<AdminView />} />
+      <Route path="/AdminAuthorise" element={<AdminAuthorise />} />
     </Routes>
   );
 }

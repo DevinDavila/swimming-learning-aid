@@ -1,26 +1,27 @@
-.Learner-box {
+.Admin-box {
     background-color: white;
     height: 100px;
-    width: 980px;
+    width: 1170px;
     display:flex;
     align-items: center;
     border-radius: 15px;
     border: black solid;
     margin-bottom: 5px;
-    cursor: pointer;
 }
 
-.table-row{
+.Admin-table-row{
     display: table;
     width: 98%;
     height: 50px;
     border-radius: 15px;
     color: black;
     font-size: 24px;
+    font-family: 'Calibri','Arial';
     font-weight: bold;
+
 }
 
-.table-cell{
+.Admin-table-cell{
     display: table-cell;
     width: 20%;
     text-align: center;
@@ -28,3 +29,9 @@
     vertical-align: middle;
 }
 
+.admin-button{
+    width:50px;
+    height: 50px;
+    margin: 0 10px;
+    font-size: 24px;
+}
