@@ -30,4 +30,16 @@ export default class UsersController {
             res.status(500).json({ error: e });
         }
     }
+
+    static async apiGetAllPendingAdmins(req, res, next) {
+
+        const { usersList, totalNumberOfUsers } = await UsersDAO.getAllPendingAdmins();
+
+        let response = {
+            users: usersList,
+            total_results: totalNumberOfUsers
+        };
+        
+        res.json(response);
+    }
 }

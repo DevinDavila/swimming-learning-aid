@@ -1,8 +1,27 @@
+import React, { useEffect } from 'react';
 import './AdminAuthorise.css';
 import AdminBox from '../../Components/AdminBox/AdminBox';
 
-
 function AdminAuthorise() {
+    const [fetchedAdmins, setFetchedLAdmins] = React.useState([]);
+
+    useEffect(() => {
+        handleFetchAdmins();
+    }, []);
+
+    const handleFetchAdmins = () => {
+        fetch('http://localhost:5000/api/users/getAllPendingAdmins', {
+            method: 'get',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((Response) => Response.json())
+            .then(data => {
+                setFetchedLAdmins(data.users);
+            });
+    }
 
     return (
         <div className='authorise-container'>
@@ -19,7 +38,10 @@ function AdminAuthorise() {
                     <div className="authorise-main-table-cell">Email Address</div>
                     <div className="authorise-main-table-cell">Authorise</div>
                 </div>
-                <AdminBox Firstname="dev" Surname="dav" EmailAddress="da@da.da"/>
+                {Array.isArray(fetchedAdmins) ? fetchedAdmins.map((admin) => (
+                    <AdminBox key={admin._id} Firstname={admin.first_name} Surname={admin.last_name} EmailAddress={admin.email} />
+                )) : null}
+                 {/* onClick={() => handleShowSelectedLearner(learner)} */}
             </div>
         </div>
     );
