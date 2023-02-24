@@ -24,7 +24,7 @@
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
-    /*border: solid red 2px;*/
+    justify-content: space-between;
 }
 
 .results-by-stage-title-text{

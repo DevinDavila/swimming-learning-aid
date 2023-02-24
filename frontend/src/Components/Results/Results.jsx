@@ -6,6 +6,7 @@ import ResultsByStage from '../../Components/ResultsByStage/ResultsByStage';
 function Results(props) {
     const [fetchedResults, setFetchedResults] = React.useState([]);
     const [stageResults, setStageResults] = React.useState(false);
+    const [stage, setStage] = React.useState(0);
 
     useEffect(() => {
         handleFetchScoresByStage();
@@ -45,30 +46,30 @@ function Results(props) {
 
     const handleShowSelectedStage = (stage) => {
         setStageResults(true);
-        // handleFetchLearner(learner);
+        setStage(stage);
     }
     const handleHideSelectedStage = () => setStageResults(false);
 
     return (
         <div className='results-page-container'>
             {!stageResults ?
-            <div className='results-table'>
-                <div className='results-title-box'>
-                    <div className='results-title-text'>Results for {props.FirstName} {props.LastName}</div>
-                    <div onClick={props.clickHideResults} className='results-title-x'>&#10005;</div>
+                <div className='results-table'>
+                    <div className='results-title-box'>
+                        <div className='results-title-text'>Results for {props.FirstName} {props.LastName}</div>
+                        <div onClick={props.clickHideResults} className='results-title-x'>&#10005;</div>
+                    </div>
+                    <div className='results-line'></div>
+                    <div className="results-main-table-row">
+                        <div className="results-main-table-cell">Stage</div>
+                        <div className="results-main-table-cell">Attempts</div>
+                        <div className="results-main-table-cell">Highest Score</div>
+                    </div>
+                    {Array.isArray(fetchedResults) ? fetchedResults.map((result) => (
+                        <StageResultsBox key={result.stage} stage={result.stage} attempts={result.attempts} highestScore={result.highestScore} onClick={() => handleShowSelectedStage(result.stage)} />
+                    )) : <div>NOTHING</div>}
                 </div>
-                <div className='results-line'></div>
-                <div className="results-main-table-row">
-                    <div className="results-main-table-cell">Stage</div>
-                    <div className="results-main-table-cell">Attempts</div>
-                    <div className="results-main-table-cell">Highest Score</div>
-                </div>
-                {Array.isArray(fetchedResults) ? fetchedResults.map((result) => (
-                    <StageResultsBox key={result.stage} stage={result.stage} attempts={result.attempts} highestScore={result.highestScore} onClick={() => handleShowSelectedStage(result.stage)} />
-                )) : <div>NOTHING</div>}
-            </div>
-            :
-            <ResultsByStage/>
+                :
+                <ResultsByStage stage={stage} learnerId={props.learnerId} clickHideResults={handleHideSelectedStage} />
             }
         </div>
     );
