@@ -45,7 +45,7 @@
 }
 
 /* Top row */
-.main-table-row{
+.Admin-view-main-table-row{
     display: table;
     width: 98%;
     height: 60px;
@@ -58,7 +58,7 @@
     margin-bottom: 10px;
 }
 
-.main-table-cell{
+.Admin-view-main-table-cell{
     display: table-cell;
     width: 20%;
     text-align: center;

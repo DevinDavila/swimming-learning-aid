@@ -6,55 +6,34 @@
 }
 
 .results-by-stage-section {
-    width: 800px;
+    width: 1000px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     position: absolute;
     background-color: white;
+    box-shadow: 10px;
     align-items: center;
+    padding-bottom: 15px;
 }
-
 
 /* Top section */
-.results-by-stage-top-section{
-    display: flex;
-    height: 100px;
-    width: 90%;
-    justify-content: space-between;
-}
-
 .results-by-stage-title-box{
     display: flex;
     height: 60px;
-    width: 200px;
+    width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
+    /*border: solid red 2px;*/
 }
 
 .results-by-stage-title-text{
     color: #000000;
     text-align: left;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.stage-text-box{
-    display: flex;
-    height: 60px;
-    width: 200px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    justify-content: right;
-}
-
-.stage-text{
-    color: #000000;
-    font-size: 40px;
+    font-size: 38px;   
     font-weight: bold;
     margin-left: 15px;
 }
-
 
 /* Line */
 .line{
@@ -65,52 +44,26 @@
     margin-bottom: 10px;
 }
 
-
-/* Middle section */
-.results-by-stage-middle-section{
-    display: flex;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: -20px;
+/* Top row */
+.results-by-stage-main-table-row{
+    display: table;
+    width: 98%;
+    height: 60px;
+    color: #555;
+    background-color: #2c6ae5;
+    color: white;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: default;
 }
 
-.info-box1{
-    width: 500px;
-    height: 200px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    color: black;
+.results-by-stage-main-table-cell{
+    display: table-cell;
+    width: 20%;
+    text-align: center;
+    border-right: 3px solid white;
+    vertical-align: middle;
 }
 
-.info-box2{
-    width: 60%;
-    height: 200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.attempts-box, .high-score-box, .last-attempt-date-box, .last-attempt-score-box{
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #000000;
-    font-size: 25px;
-}
-
-.progress-box{
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #000000;
-    font-size: 25px;
-}
