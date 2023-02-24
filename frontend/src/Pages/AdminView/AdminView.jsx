@@ -55,10 +55,10 @@ function AdminView() {
                     </div>
                     <div className='line'></div>
 
-                    <div className="main-table-row">
-                        <div className="main-table-cell">First name</div>
-                        <div className="main-table-cell">Surname</div>
-                        <div className="main-table-cell">Date of birth</div>
+                    <div className="Admin-view-main-table-row">
+                        <div className="Admin-view-main-table-cell">First name</div>
+                        <div className="Admin-view-main-table-cell">Surname</div>
+                        <div className="Admin-view-main-table-cell">Date of birth</div>
                     </div>
                     {Array.isArray(fetchedLearners) ? fetchedLearners.map((learner) => (
                         <LearnerBox key={learner._id} Firstname={learner.first_name} Surname={learner.last_name} DOB={new Date(learner.date_of_birth).toLocaleDateString()} onClick={() => handleShowSelectedLearner(learner)} />

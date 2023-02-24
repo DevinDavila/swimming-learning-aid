@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './Results.css';
 import StageResultsBox from '../StageResultsBox/StageResultsBox';
+import ResultsByStage from '../../Components/ResultsByStage/ResultsByStage';
 
 function Results(props) {
     const [fetchedResults, setFetchedResults] = React.useState([]);
@@ -67,7 +68,8 @@ function Results(props) {
                 )) : <div>NOTHING</div>}
             </div>
             :
-            <div>RESULTS BY STAGE</div>}
+            <ResultsByStage/>
+            }
         </div>
     );
 }

@@ -1,34 +1,22 @@
 import './ResultsByStage.css';
+import ResultBox from '../../Components/ResultBox/ResultBox';
 
 function ResultsByStage() {
     return (
         <div className='results-by-stage-container'>
             <div className='results-by-stage-section'>
-
-                <div className='results-by-stage-top-section'>
-                    <div className='results-by-stage-title-box'>
-                        <div className='results-by-stage-title-text'> Results </div>
-                    </div>
-                    <div className='stage-text-box'>
-                        <div className='stage-text'> Stage X </div>
-                    </div>                
-                </div>
-                
+                <div className='results-by-stage-title-box'>
+                    <div className='results-by-stage-title-text'> Results for Stage X</div>
+                </div>  
                 <div className='line'></div>
-                
-                <div className='results-by-stage-middle-section'>
-                    <div className='progress-box'> Progress </div>
 
-                    <div className='info-box1'>
-                        <div className='attempts-box'> Attempts</div>
-                        <div className='high-score-box'> High score </div>
-                    </div>
-
-                    <div className='info-box2'>
-                        <div className='last-attempt-date-box'> Last attempt date </div>
-                        <div className='last-attempt-score-box'> Last attempt score </div>
-                    </div>
+                <div className="results-by-stage-main-table-row">
+                    <div className="results-by-stage-main-table-cell">Date of attempt</div>
+                    <div className="results-by-stage-main-table-cell">Score</div>
                 </div>
+
+                <ResultBox DateOfAttempt={"27/06/2005"} ScoreOfAttempt={100000}/>
+                <ResultBox DateOfAttempt={"69/06/2005"} ScoreOfAttempt={69}/>
             </div>
         </div>
     );
