@@ -58,4 +58,44 @@ export default class UserDAO {
             throw e;
         }
     }
+
+    static async getAllPendingAdmins({} = {}) {
+        let query;
+
+        query = {"type": { $eq: "Admin" }, "status": { $eq: "Pending"} }
+
+        let cursor;
+
+        try {
+            cursor = await users.find(query);
+        } catch(e) {
+            console.error(`Unable to issue find command, ${e}`);
+            return { usersList: [], totalNumberOfUsers: 0 }
+        }
+
+        try {
+            const usersList = await cursor.toArray();
+            const totalNumberOfUsers = await users.countDocuments(query);
+
+            return { usersList, totalNumberOfUsers }
+        } catch(e) {
+            console.error(`Unable to convert cursor to array or problem counting documents, ${e}`);
+            return { usersList: [], totalNumberOfUsers: 0 }
+        } 
+    }
+
+    static async updateAdminStatus(userId, status) {
+        try {
+            const updateResponse = await users.updateOne(
+                { _id: ObjectId(userId) },
+                { $set: { status: status } }
+            );
+ 
+            return updateResponse;
+        } catch (e) {
+            console.error(`Unable to update user in DAO: ${e}`);
+        
+        return { error: e };
+        }
+    }
 }

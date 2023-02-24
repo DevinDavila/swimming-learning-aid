@@ -5,5 +5,7 @@ const router = express.Router();
 
 router.route("/getAllLearners").get(UsersController.apiGetAllUsers);
 router.route("/getLearnerById/:id").get(UsersController.apiGetUserById);
+router.route("/getAllPendingAdmins").get(UsersController.apiGetAllPendingAdmins);
+router.route("/updateAdminStatus").put(UsersController.apiUpdateAdminStatus);
 
 export default router
