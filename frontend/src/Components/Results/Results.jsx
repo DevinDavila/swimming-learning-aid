@@ -66,7 +66,7 @@ function Results(props) {
                     </div>
                     {Array.isArray(fetchedResults) ? fetchedResults.map((result) => (
                         <StageResultsBox key={result.stage} stage={result.stage} attempts={result.attempts} highestScore={result.highestScore} onClick={() => handleShowSelectedStage(result.stage)} />
-                    )) : <div>NOTHING</div>}
+                    )) : null}
                 </div>
                 :
                 <ResultsByStage stage={stage} learnerId={props.learnerId} clickHideResults={handleHideSelectedStage} />
