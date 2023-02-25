@@ -117,11 +117,11 @@ function Learner() {
                     <form className="learner-login-form">
                         <div className="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address" />
+                            <input type="email" onChange={e => setEmail(e.target.value)} className="form-control"  placeholder="Enter email address" />
                         </div>
                         <div className="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" onChange={e => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            <input type="password" onChange={e => setPassword(e.target.value)} className="form-control" placeholder="Password" />
                         </div>
                         <div className="learner-login-submit-button-container">
                             <button type='button' onClick={handleLogin} className="btn btn-primary learner-login-submit-button">Login</button>
@@ -143,19 +143,19 @@ function Learner() {
                                 <form className="learner-sign-up-form">
                                     <div className="form-group">
                                         <label for="inputEmailAddress">Email address</label> <div className="learner-required-text"> *</div>
-                                        <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" id="inputEmailAddress" aria-describedby="emailHelp" placeholder="Enter email address" />
+                                        <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" placeholder="Enter email address" />
                                     </div>
                                     <div className="form-group">
                                         <label for="inputPassword">Password</label>   <div className="learner-required-text"> *</div>
-                                        <input type="password" onChange={e => setPassword(e.target.value)} className="form-control" id="inputPassword" placeholder="Password" />
+                                        <input type="password" onChange={e => setPassword(e.target.value)} className="form-control" placeholder="Password" />
                                     </div>
                                     <div className="form-group">
                                         <label for="inputConfirmPassword">Confirm Password</label> <div className="learner-required-text"> *</div>
-                                        <input type="password" onChange={e => setConfirmPassword(e.target.value)} className="form-control" id="inputConfirmPassword" placeholder="Confirm Password" />
+                                        <input type="password" onChange={e => setConfirmPassword(e.target.value)} className="form-control" placeholder="Confirm Password" />
                                     </div>
                                     <div className="form-group">
                                         <label for="inputDOB">Enter your Date of Birth</label> <div className="learner-required-text"> *</div>
-                                        <input type="date" value={dateOfBirth.toISOString().substring(0, 10)} onChange={handleDOBChange} className="form-control" id="inputDOB" />
+                                        <input type="date" value={dateOfBirth.toISOString().substring(0, 10)} onChange={handleDOBChange} className="form-control" />
                                     </div>
                                 </form>
                             </div>
@@ -164,15 +164,15 @@ function Learner() {
                                 <form className="learner-sign-up-form">
                                     <div className="form-group">
                                         <label for="inputGuardianFirstname">Guardian Firstname</label>
-                                        <input type="name" onChange={e => setGuardianFirstName(e.target.value)} className="form-control" id="inputGuardianFirstname" placeholder="e.g. Olivia" />
+                                        <input type="name" onChange={e => setGuardianFirstName(e.target.value)} className="form-control" placeholder="e.g. Olivia" />
                                     </div>
                                     <div className="form-group">
                                         <label for="inputGuardianSurname">Guardian Surname</label>
-                                        <input type="name" onChange={e => setGuardianLastName(e.target.value)} className="form-control" id="inputGuardianSurname" placeholder="e.g. Jones" />
+                                        <input type="name" onChange={e => setGuardianLastName(e.target.value)} className="form-control"  placeholder="e.g. Jones" />
                                     </div>
                                     <div className="form-group">
                                         <label for="inputLearnerFirstname">Learner Firstname</label> <div className="learner-required-text"> *</div>
-                                        <input type="name" onChange={e => setFirstName(e.target.value)} className="form-control" id="inputLearnerFirstname" placeholder="e.g. Bob" />
+                                        <input type="name" onChange={e => setFirstName(e.target.value)} className="form-control" placeholder="e.g. Bob" />
                                     </div>
                                     <div className="form-group">
                                         <label for="inputLearnerSurname">Learner Surname</label> <div className="learner-required-text"> *</div>
