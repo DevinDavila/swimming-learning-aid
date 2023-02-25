@@ -63,7 +63,7 @@ function AdminAuthorise() {
         <div className='authorise-container'>
             <div className='authorise-sections-container'>
                 <div className='authorise-title-box'>
-                    <div className='authorise-title-text'>Admin View</div>
+                    <div className='authorise-title-text'>Admin Authorise</div>
                 </div>
 
                 <div className='line'></div>
