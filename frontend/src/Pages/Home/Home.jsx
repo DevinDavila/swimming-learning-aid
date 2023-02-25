@@ -2,7 +2,6 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import penImg from '../../images/pen-icon.png'
 import swimImg from '../../images/swimming-icon.png'
-import QuizResults from '../../Components/QuizResults/QuizResults';
 
 function Home() {
     return (
