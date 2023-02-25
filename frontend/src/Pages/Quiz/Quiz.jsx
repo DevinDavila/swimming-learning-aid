@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Answer from '../../Components/Answer/Answer';
 import Logo from '../../Components/Logo/Logo';
 import Question from '../../Components/Question/Question';
+import QuizResults from "../../Components/QuizResults/QuizResults";
 import './Quiz.css';
 
 function Quiz() {
@@ -94,7 +95,7 @@ function Quiz() {
                         }
                     </div>
                 </> :
-                <div>{`QUIZ COMPLETED: ${correctAnswers}/${questions.length}`}</div>}
+                <div><QuizResults stage={stage} correctAnswers={correctAnswers} /></div>}
         </div>
     );
 }
