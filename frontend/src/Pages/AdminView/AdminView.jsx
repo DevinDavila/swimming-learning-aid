@@ -71,7 +71,6 @@ function AdminView() {
                         : null}
                 </>
             }
-            {/* <ResultsByStage /> */}
         </div>
     );
 }
