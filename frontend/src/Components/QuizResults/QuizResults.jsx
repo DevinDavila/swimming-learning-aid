@@ -2,8 +2,8 @@ import './QuizResults.css';
 
 function QuizResults() {
 
-    const QuizScore = 9;
-    const Percentage = Math.floor((QuizScore/15) *100);
+    const QuizScore = 12;
+    const Percentage = Math.floor((QuizScore / 15) * 100);
 
     return (
         <div className='quiz-result-container'>
@@ -20,17 +20,17 @@ function QuizResults() {
                         <div className='quiz-response-text'>
                             Congratulations, you have passed this quiz and are ready to move on.
                         </div>
-                    :
-                    <>
-                        {/* If score is 9 or less */}
-                        <div className='quiz-response-text'>
-                            Unfortunately, you have failed this test, give it another go!
-                        </div>
-                    </>
+                        :
+                        <>
+                            {/* If score is 9 or less */}
+                            <div className='quiz-response-text'>
+                                Unfortunately, you have failed this test, give it another go!
+                            </div>
+                        </>
                     }
                 </div>
-                
-                <button className="btn btn-secondary return-button"> Return to Stages page</button> 
+
+                <button className="btn btn-secondary return-button"> Return to Stages page</button>
 
             </div>
         </div>

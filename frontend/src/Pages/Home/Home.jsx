@@ -6,7 +6,7 @@ import QuizResults from '../../Components/QuizResults/QuizResults';
 
 function Home() {
     return (
-        <div className='login-container'>{/*
+        <div className='login-container'>
             <div className="login-sections-container">
                 <Link className="login-sections-link" to="/admin">
                     <div className="login-left-section">
@@ -29,9 +29,8 @@ function Home() {
                             to benefit you and your swimming career</text>
                     </div>
                 </Link>
-            </div>*/}
-            <QuizResults/>
-    </div> 
+            </div>
+        </div>
     );
 }
 
