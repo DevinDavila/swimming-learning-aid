@@ -1,11 +1,38 @@
 import './QuizResults.css';
+import { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function QuizResults(props) {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        handleSaveScore();
+    }, []);
+
+    const handleSaveScore = () => {
+        fetch('http://localhost:5000/api/scores/add', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                user_id: sessionStorage.getItem("userId"),
+                stage: props.stage,
+                score: props.correctAnswers,
+                date_time: new Date()
+            })
+        })
+            .then((Response) => Response.json())
+    }
+
+    const handleBackToStages = () => {
+        navigate('/stages');
+    }
 
     let correctAnswers = props.correctAnswers;
-
     const Percentage = Math.floor((correctAnswers / 15) * 100);
-    
+
     return (
         <div className='quiz-result-container'>
             <div className='quiz-result-sections-container'>
@@ -28,7 +55,7 @@ function QuizResults(props) {
                     }
                 </div>
 
-                <button className="btn btn-secondary return-button"> Return to Stages page</button>
+                <button className="btn btn-secondary return-button" onClick={handleBackToStages}>Return to Stages page</button>
 
             </div>
         </div>

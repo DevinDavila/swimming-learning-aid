@@ -38,6 +38,7 @@ function Learner() {
                 if (result.status === 'success') {
                     sessionStorage.setItem('token', result.user.token);
                     sessionStorage.setItem('email', email);
+                    sessionStorage.setItem('userId', result.user._id);
                     navigate('/stages');
                 } else {
                     wrongLogin();
