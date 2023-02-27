@@ -5,7 +5,7 @@ export default class ScoresController {
     static async apiGetScoreByUserIdByStage(req, res, next) {
         try {
             let userId = req.params.userId || {};
-            let stage = req.params.stage || {};
+            let stage = parseInt(req.params.stage) || {};
             let scores = await ScoresDAO.getScoreByUserIdByStage(userId, stage);
  
             if (!scores) {

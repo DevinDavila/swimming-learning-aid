@@ -4,7 +4,7 @@ export default class QuestionsController {
 
     static async apiGetQuestionsByStage(req, res, next) {
         try {
-            let stage = req.params.stage || {};
+            let stage = parseInt(req.params.stage) || {};
             let question = await QuestionsDAO.getQuestionsByStage(stage);
  
             if (!question) {

@@ -23,17 +23,27 @@ function Learner() {
     const handleHideSignUp = () => setSignUp(false);
 
     const handleLogin = () => {
-        if (emailValidationRegex.test(email)) {
-            fetch('http://localhost:5000/api/authentication/login', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email: email,
-                    password: password
-                })
+        fetch('http://localhost:5000/api/authentication/login', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        })
+            .then((Response) => Response.json())
+            .then((result) => {
+                if (result.status === 'success') {
+                    sessionStorage.setItem('token', result.user.token);
+                    sessionStorage.setItem('email', email);
+                    sessionStorage.setItem('userId', result.user._id);
+                    navigate('/stages');
+                } else {
+                    wrongLogin();
+                }
             })
                 .then((Response) => Response.json())
                 .then((result) => {
