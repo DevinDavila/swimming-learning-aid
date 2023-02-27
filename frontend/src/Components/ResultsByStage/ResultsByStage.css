@@ -35,6 +35,14 @@
     margin-left: 15px;
 }
 
+.results-by-stage-title-x {
+    font-size: 40px;
+    font-family: 'Calibri', 'Arial';
+    font-weight: bold;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
 /* Line */
 .line{
     background-color: #626262;

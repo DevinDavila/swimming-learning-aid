@@ -24,7 +24,13 @@
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
-    /*border: solid red 2px;*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+.authorise-back-btn {
+    margin-right: 20px;
+    height: 50px;
 }
 
 .authorise-title-text{

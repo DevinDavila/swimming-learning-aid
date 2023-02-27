@@ -2,13 +2,22 @@ import React, { useEffect } from 'react';
 import './AdminView.css';
 import LearnerBox from '../../Components/LearnerBox/LearnerBox';
 import Results from '../../Components/Results/Results';
+import { useNavigate } from "react-router-dom";
 
 function AdminView() {
+    const navigate = useNavigate();
+
     const [fetchedLearners, setFetchedLearners] = React.useState([]);
     const [results, setResults] = React.useState(false);
     const [fetchedLearner, setFetchedLearner] = React.useState({});
+    const [visibleAuthPage, setVisibleAuthPage] = React.useState(false);
 
     useEffect(() => {
+        if (sessionStorage.getItem("email") == 'devin@gmail.com')
+            setVisibleAuthPage(true);
+        else
+            setVisibleAuthPage(false);
+
         handleFetchLearners();
     }, []);
 
@@ -46,12 +55,17 @@ function AdminView() {
             });
     }
 
+    const handleAuthPage = () => {
+        navigate('/AdminAuthorise');
+    }
+
     return (
         <div className='view-container'>
             {!results ?
                 <div className='view-sections-container'>
                     <div className='view-title-box'>
                         <div className='view-title-text'>Admin View</div>
+                        {visibleAuthPage ? <button className='btn btn-secondary view-auth-btn' onClick={handleAuthPage}>Authorise Admins</button> : null}
                     </div>
                     <div className='line'></div>
 

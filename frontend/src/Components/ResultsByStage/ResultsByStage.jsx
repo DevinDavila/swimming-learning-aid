@@ -29,7 +29,7 @@ function ResultsByStage(props) {
             <div className='results-by-stage-section'>
                 <div className='results-by-stage-title-box'>
                     <div className='results-by-stage-title-text'> Results for Stage {props.stage}</div>
-                    <div onClick={props.clickHideResults} className='results-title-x'>&#10005;</div>
+                    <div onClick={props.clickHideResults} className='results-by-stage-title-x'>&#10005;</div>
                 </div>
                 <div className='line'></div>
 

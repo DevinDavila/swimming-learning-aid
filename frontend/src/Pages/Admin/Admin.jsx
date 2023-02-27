@@ -37,7 +37,7 @@ function Admin() {
                     sessionStorage.setItem('email', email);
                     navigate('/adminView');
                 } else {
-                    wrongLogin();
+                    wrongLogin(result.error);
                 }
             })
     }
@@ -78,7 +78,7 @@ function Admin() {
 
     const userAdded = () => toast("User Added Successfully!");
     const userExists = () => toast("User Already Exists. Try Logging In.");
-    const wrongLogin = () => toast("Wrong Username or Password. Please Try Again.");
+    const wrongLogin = (result) => toast(result);
     const requiredFields = () => toast("Fill All Required Fields.");
     const passwordsNotMatching = () => toast("Passwords Do Not Match.");
 
