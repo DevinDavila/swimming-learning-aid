@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Learner() {
     const navigate = useNavigate();
+    const emailValidationRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     const [signUp, setSignUp] = React.useState(false);
     const [email, setEmail] = useState('');
@@ -44,6 +45,20 @@ function Learner() {
                     wrongLogin();
                 }
             })
+                .then((Response) => Response.json())
+                .then((result) => {
+                    if (result.status === 'success') {
+                        sessionStorage.setItem('token', result.user.token);
+                        sessionStorage.setItem('email', email);
+                        navigate('/stages');
+                    } else {
+                        wrongLogin();
+                    }
+                })
+        }
+        else {
+            invalidEmail();
+        }
     }
 
     const handleDOBChange = (event) => {
@@ -62,41 +77,48 @@ function Learner() {
             if (password != confirmPassword) {
                 passwordsNotMatching();
             } else {
-                fetch('http://localhost:5000/api/authentication/register', {
-                    method: 'post',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        first_name: firstName,
-                        last_name: lastName,
-                        email: email,
-                        password: password,
-                        type: 'Learner',
-                        date_of_birth: dateOfBirth,
-                        guardian_first_name: guardianFirstName,
-                        guardian_last_name: guardianLastName
+                if (emailValidationRegex.test(email)) {
+                    fetch('http://localhost:5000/api/authentication/register', {
+                        method: 'post',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            first_name: firstName,
+                            last_name: lastName,
+                            email: email,
+                            password: password,
+                            type: 'Learner',
+                            date_of_birth: dateOfBirth,
+                            guardian_first_name: guardianFirstName,
+                            guardian_last_name: guardianLastName
+                        })
                     })
-                })
-                    .then((Response) => Response.json())
-                    .then((result) => {
-                        if (result.status === 'success') {
-                            userAdded();
-                        } else {
-                            userExists();
-                        }
-                    })
+                        .then((Response) => Response.json())
+                        .then((result) => {
+                            if (result.status === 'success') {
+                                userAdded();
+                            } else {
+                                userExists();
+                            }
+                        })
+                }
+                else {
+                    invalidEmail();
+                }
             }
         }
     }
 
+    // Alerts
     const userAdded = () => toast("User Added Successfully!");
     const userExists = () => toast("User Already Exists. Try Logging In.");
     const wrongLogin = () => toast("Wrong Username or Password. Please Try Again.");
     const requiredFields = () => toast("Fill All Required Fields.");
     const passwordsNotMatching = () => toast("Passwords Do Not Match.");
     const validDOB = () => toast("Enter a Valid Date of Birth.");
+    const invalidEmail = () => toast("Enter a Valid Email Address.");
 
     return (
         <div className='learner-container'>
@@ -118,7 +140,7 @@ function Learner() {
                     <form className="learner-login-form">
                         <div className="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" onChange={e => setEmail(e.target.value)} className="form-control"  placeholder="Enter email address" />
+                            <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" placeholder="Enter email address" />
                         </div>
                         <div className="form-group">
                             <label for="exampleInputPassword1">Password</label>
@@ -169,7 +191,7 @@ function Learner() {
                                     </div>
                                     <div className="form-group">
                                         <label for="inputGuardianSurname">Guardian Surname</label>
-                                        <input type="name" onChange={e => setGuardianLastName(e.target.value)} className="form-control"  placeholder="e.g. Jones" />
+                                        <input type="name" onChange={e => setGuardianLastName(e.target.value)} className="form-control" placeholder="e.g. Jones" />
                                     </div>
                                     <div className="form-group">
                                         <label for="inputLearnerFirstname">Learner Firstname</label> <div className="learner-required-text"> *</div>

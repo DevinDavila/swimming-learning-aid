@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Admin() {
     const navigate = useNavigate();
+    const emailValidationRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     const [signUp, setSignUp] = React.useState(false);
     const [email, setEmail] = useState('');
@@ -19,27 +20,32 @@ function Admin() {
     const handleHideSignUp = () => setSignUp(false);
 
     const handleLogin = () => {
-        fetch('http://localhost:5000/api/authentication/login', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email,
-                password: password
+        if (emailValidationRegex.test(email)) {
+            fetch('http://localhost:5000/api/authentication/login', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
             })
-        })
-            .then((Response) => Response.json())
-            .then((result) => {
-                if (result.status === 'success') {
-                    sessionStorage.setItem('token', result.user.token);
-                    sessionStorage.setItem('email', email);
-                    navigate('/adminView');
-                } else {
-                    wrongLogin(result.error);
-                }
-            })
+                .then((Response) => Response.json())
+                .then((result) => {
+                    if (result.status === 'success') {
+                        sessionStorage.setItem('token', result.user.token);
+                        sessionStorage.setItem('email', email);
+                        navigate('/adminView');
+                    } else {
+                        wrongLogin(result.error);
+                    }
+                })
+        }
+        else {
+            invalidEmail();
+        }
     }
 
     const handleRegister = () => {
@@ -49,38 +55,45 @@ function Admin() {
             if (password != confirmPassword) {
                 passwordsNotMatching();
             } else {
-                fetch('http://localhost:5000/api/authentication/register', {
-                    method: 'post',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        first_name: firstName,
-                        last_name: lastName,
-                        email: email,
-                        password: password,
-                        type: 'Admin',
-                        status: 'Pending'
+                if (emailValidationRegex.test(email)) {
+                    fetch('http://localhost:5000/api/authentication/register', {
+                        method: 'post',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            first_name: firstName,
+                            last_name: lastName,
+                            email: email,
+                            password: password,
+                            type: 'Admin',
+                            status: 'Pending'
+                        })
                     })
-                })
-                    .then((Response) => Response.json())
-                    .then((result) => {
-                        if (result.status === 'success') {
-                            userAdded();
-                        } else {
-                            userExists();
-                        }
-                    })
+                        .then((Response) => Response.json())
+                        .then((result) => {
+                            if (result.status === 'success') {
+                                userAdded();
+                            } else {
+                                userExists();
+                            }
+                        })
+                }
+                else {
+                    invalidEmail();
+                }
             }
         }
     }
 
+    // Alerts
     const userAdded = () => toast("User Added Successfully!");
     const userExists = () => toast("User Already Exists. Try Logging In.");
     const wrongLogin = (result) => toast(result);
     const requiredFields = () => toast("Fill All Required Fields.");
     const passwordsNotMatching = () => toast("Passwords Do Not Match.");
+    const invalidEmail = () => toast("Enter a Valid Email Address.");
 
     return (
         <div className='admin-container'>
