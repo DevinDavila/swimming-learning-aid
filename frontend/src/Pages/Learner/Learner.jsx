@@ -22,17 +22,20 @@ function Learner() {
     const handleHideSignUp = () => setSignUp(false);
 
     const handleLogin = () => {
-        fetch('http://localhost:5000/api/authentication/login', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email,
-                password: password
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;        if ( re.test(email) ) {
+        if ( re.test(email) ) {
+
+            fetch('http://localhost:5000/api/authentication/login', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
             })
-        })
             .then((Response) => Response.json())
             .then((result) => {
                 if (result.status === 'success') {
@@ -43,6 +46,11 @@ function Learner() {
                     wrongLogin();
                 }
             })
+        }
+    }
+        else {
+            invalidEmail();
+        }
     }
 
     const handleDOBChange = (event) => {
@@ -61,31 +69,37 @@ function Learner() {
             if (password != confirmPassword) {
                 passwordsNotMatching();
             } else {
-                fetch('http://localhost:5000/api/authentication/register', {
-                    method: 'post',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        first_name: firstName,
-                        last_name: lastName,
-                        email: email,
-                        password: password,
-                        type: 'Learner',
-                        date_of_birth: dateOfBirth,
-                        guardian_first_name: guardianFirstName,
-                        guardian_last_name: guardianLastName
+                let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if ( re.test(email) ) {
+                    fetch('http://localhost:5000/api/authentication/register', {
+                        method: 'post',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            first_name: firstName,
+                            last_name: lastName,
+                            email: email,
+                            password: password,
+                            type: 'Learner',
+                            date_of_birth: dateOfBirth,
+                            guardian_first_name: guardianFirstName,
+                            guardian_last_name: guardianLastName
+                        })
                     })
-                })
-                    .then((Response) => Response.json())
-                    .then((result) => {
-                        if (result.status === 'success') {
-                            userAdded();
-                        } else {
-                            userExists();
-                        }
-                    })
+                        .then((Response) => Response.json())
+                        .then((result) => {
+                            if (result.status === 'success') {
+                                userAdded();
+                            } else {
+                                userExists();
+                            }
+                        })
+                    }
+                else {
+                    invalidEmail();
+                }
             }
         }
     }
@@ -96,7 +110,9 @@ function Learner() {
     const requiredFields = () => toast("Fill All Required Fields.");
     const passwordsNotMatching = () => toast("Passwords Do Not Match.");
     const validDOB = () => toast("Enter a Valid Date of Birth.");
+    const invalidEmail = () => toast("Enter a Valid Email Address.");
 
+    
     return (
         <div className='learner-container'>
             <ToastContainer
