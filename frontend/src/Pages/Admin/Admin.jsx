@@ -102,12 +102,12 @@ function Admin() {
                     <div className="admin-login-section-title">Admin login</div>
                     <form className="admin-login-form">
                         <div className="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address" />
+                            <label>Email address</label>
+                            <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" placeholder="Enter email address" />
                         </div>
                         <div className="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" onChange={e => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            <label >Password</label>
+                            <input type="password" onChange={e => setPassword(e.target.value)} className="form-control" placeholder="Password" />
                         </div>
                         <div className="admin-login-submit-button-container">
                             <button type="button" onClick={handleLogin} className="btn btn-primary admin-login-submit-button">Login</button>
@@ -125,16 +125,16 @@ function Admin() {
                         <div className="admin-sign-up-left-section">
                             <form className="admin-sign-up-form">
                                 <div className="form-group">
-                                    <label for="inputEmailAddress">Email address</label> <div className="admin-required-text"> *</div>
-                                    <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" id="inputEmailAddress" aria-describedby="emailHelp" placeholder="Enter email address" />
+                                    <label>Email address</label> <div className="admin-required-text"> *</div>
+                                    <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" placeholder="Enter email address" />
                                 </div>
                                 <div className="form-group">
-                                    <label for="inputPassword">Password</label>   <div className="admin-required-text"> *</div>
-                                    <input type="password" onChange={e => setPassword(e.target.value)} className="form-control" id="inputPassword" placeholder="Password" />
+                                    <label>Password</label>   <div className="admin-required-text"> *</div>
+                                    <input type="password" onChange={e => setPassword(e.target.value)} className="form-control" placeholder="Password" />
                                 </div>
                                 <div className="form-group">
-                                    <label for="inputConfirmPassword">Confirm Password</label> <div className="admin-required-text"> *</div>
-                                    <input type="password" onChange={e => setConfirmPassword(e.target.value)} className="form-control" id="inputConfirmPassword" placeholder="Confirm Password" />
+                                    <label>Confirm Password</label> <div className="admin-required-text"> *</div>
+                                    <input type="password" onChange={e => setConfirmPassword(e.target.value)} className="form-control" placeholder="Confirm Password" />
                                 </div>
                             </form>
                         </div>
@@ -142,12 +142,12 @@ function Admin() {
                         <div className="admin-sign-up-right-section">
                             <form className="admin-sign-up-form">
                                 <div className="form-group">
-                                    <label for="inputAdminFirstname">Admin Firstname</label> <div className="admin-required-text"> *</div>
-                                    <input type="name" onChange={e => setFirstName(e.target.value)} className="form-control" id="inputAdminFirstname" placeholder="e.g. Bob" />
+                                    <label>Admin Firstname</label> <div className="admin-required-text"> *</div>
+                                    <input type="name" onChange={e => setFirstName(e.target.value)} className="form-control" placeholder="e.g. Bob" />
                                 </div>
                                 <div className="form-group">
-                                    <label for="inputAdminSurname">Admin Surname</label> <div className="admin-required-text"> *</div>
-                                    <input type="name" onChange={e => setLastName(e.target.value)} className="form-control" id="inputAdminSurname" placeholder="e.g. Smith" />
+                                    <label>Admin Surname</label> <div className="admin-required-text"> *</div>
+                                    <input type="name" onChange={e => setLastName(e.target.value)} className="form-control" placeholder="e.g. Smith" />
                                 </div>
                             </form>
                         </div>
