@@ -68,6 +68,7 @@ function Admin() {
                     .then((result) => {
                         if (result.status === 'success') {
                             userAdded();
+                            setSignUp(false);
                         } else {
                             userExists();
                         }
