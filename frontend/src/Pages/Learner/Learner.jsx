@@ -130,7 +130,7 @@ function Learner() {
                         </div>
                         <div className="learner-login-submit-text">
                             Don't have an account?&nbsp;
-                            <text onClick={handleShowSignUp} className="learner-login-submit-text-link">Sign up here</text>
+                            <div onClick={handleShowSignUp} className="learner-login-submit-text-link">Sign up here</div>
                         </div>
                     </form>
                 </div>
@@ -189,7 +189,7 @@ function Learner() {
                         </div>
 
                         <div className="learner-sign-up-submit-text"> Already have an an account?&nbsp;
-                            <text onClick={handleHideSignUp} className="learner-sign-up-submit-text-link">Login here</text>
+                            <div onClick={handleHideSignUp} className="learner-sign-up-submit-text-link">Login here</div>
                         </div>
                     </div>
                 </>

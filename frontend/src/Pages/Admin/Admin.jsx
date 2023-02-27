@@ -114,7 +114,7 @@ function Admin() {
                         </div>
                         <div className="admin-login-submit-text">
                             Don't have an account?&nbsp;
-                            <text href="#" onClick={handleShowSignUp} className="admin-login-submit-text-link">Sign up here</text>
+                            <div href="#" onClick={handleShowSignUp} className="admin-login-submit-text-link">Sign up here</div>
                         </div>
                     </form>
                 </div>
@@ -158,7 +158,7 @@ function Admin() {
                     </div>
 
                     <div className="admin-sign-up-submit-text"> Already have an an account?&nbsp;
-                        <text onClick={handleHideSignUp} className="admin-sign-up-submit-text-link">Login here</text>
+                        <div onClick={handleHideSignUp} className="admin-sign-up-submit-text-link">Login here</div>
                     </div>
                 </div>
             }
