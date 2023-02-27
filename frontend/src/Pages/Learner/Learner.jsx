@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Learner() {
     const navigate = useNavigate();
+    const emailValidationRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     const [signUp, setSignUp] = React.useState(false);
     const [email, setEmail] = useState('');
@@ -22,9 +23,7 @@ function Learner() {
     const handleHideSignUp = () => setSignUp(false);
 
     const handleLogin = () => {
-        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;        if ( re.test(email) ) {
-        if ( re.test(email) ) {
-
+        if (emailValidationRegex.test(email)) {
             fetch('http://localhost:5000/api/authentication/login', {
                 method: 'post',
                 headers: {
@@ -36,18 +35,17 @@ function Learner() {
                     password: password
                 })
             })
-            .then((Response) => Response.json())
-            .then((result) => {
-                if (result.status === 'success') {
-                    sessionStorage.setItem('token', result.user.token);
-                    sessionStorage.setItem('email', email);
-                    navigate('/stages');
-                } else {
-                    wrongLogin();
-                }
-            })
+                .then((Response) => Response.json())
+                .then((result) => {
+                    if (result.status === 'success') {
+                        sessionStorage.setItem('token', result.user.token);
+                        sessionStorage.setItem('email', email);
+                        navigate('/stages');
+                    } else {
+                        wrongLogin();
+                    }
+                })
         }
-    }
         else {
             invalidEmail();
         }
@@ -69,8 +67,7 @@ function Learner() {
             if (password != confirmPassword) {
                 passwordsNotMatching();
             } else {
-                let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if ( re.test(email) ) {
+                if (emailValidationRegex.test(email)) {
                     fetch('http://localhost:5000/api/authentication/register', {
                         method: 'post',
                         headers: {
@@ -96,7 +93,7 @@ function Learner() {
                                 userExists();
                             }
                         })
-                    }
+                }
                 else {
                     invalidEmail();
                 }
@@ -104,6 +101,7 @@ function Learner() {
         }
     }
 
+    // Alerts
     const userAdded = () => toast("User Added Successfully!");
     const userExists = () => toast("User Already Exists. Try Logging In.");
     const wrongLogin = () => toast("Wrong Username or Password. Please Try Again.");
@@ -112,7 +110,6 @@ function Learner() {
     const validDOB = () => toast("Enter a Valid Date of Birth.");
     const invalidEmail = () => toast("Enter a Valid Email Address.");
 
-    
     return (
         <div className='learner-container'>
             <ToastContainer
@@ -133,7 +130,7 @@ function Learner() {
                     <form className="learner-login-form">
                         <div className="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" onChange={e => setEmail(e.target.value)} className="form-control"  placeholder="Enter email address" />
+                            <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" placeholder="Enter email address" />
                         </div>
                         <div className="form-group">
                             <label for="exampleInputPassword1">Password</label>
@@ -184,7 +181,7 @@ function Learner() {
                                     </div>
                                     <div className="form-group">
                                         <label for="inputGuardianSurname">Guardian Surname</label>
-                                        <input type="name" onChange={e => setGuardianLastName(e.target.value)} className="form-control"  placeholder="e.g. Jones" />
+                                        <input type="name" onChange={e => setGuardianLastName(e.target.value)} className="form-control" placeholder="e.g. Jones" />
                                     </div>
                                     <div className="form-group">
                                         <label for="inputLearnerFirstname">Learner Firstname</label> <div className="learner-required-text"> *</div>
