@@ -1,8 +1,7 @@
 // import mongodb from 'mongodb';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { type } from 'os';
-		 
+
 // const ObjectId = mongodb.ObjectId;
 
 let users;
@@ -47,16 +46,16 @@ export default class AuthenticationDAO {
 
             // Create token
             const token = jwt.sign(
-                { 
-                    user_id: user._id, 
-                    email 
+                {
+                    user_id: user._id,
+                    email
                 },
                 process.env.TOKEN_KEY,
                 {
                     expiresIn: "2h",
                 }
             );
-            
+
             // Save user token
             user.token = token;
 
@@ -73,22 +72,26 @@ export default class AuthenticationDAO {
             const user = await users.findOne({ email });
 
             if (user && (await bcrypt.compare(password, user.password))) {
-                // Create token
-                const token = jwt.sign({ 
-                    user_id: user._id,
-                    email
-                },
-                process.env.TOKEN_KEY,
-                {
-                    expiresIn: "2h",
-                });
-            
-                // save user token
-                user.token = token;
-            
-                return await user;
+                if (user.type === 'Learner' || user.type === 'Admin' && user.status === 'Approved') {
+                    // Create token
+                    const token = jwt.sign({
+                        user_id: user._id,
+                        email
+                    },
+                        process.env.TOKEN_KEY,
+                        {
+                            expiresIn: "2h",
+                        });
+
+                    // save user token
+                    user.token = token;
+
+                    return await user;
+                } else {
+                    return { status: 'Failed', error: 'You have to be registered as a Learner or an Approved Admin to log in.' };
+                }
             } else {
-                return { status: 'Failed', error: 'Invalid credentials' };
+                return { status: 'Failed', error: 'Invalid credentials. Please try again.' };
             }
         } catch (e) {
             console.error(`Unable to add user: ${e}`);

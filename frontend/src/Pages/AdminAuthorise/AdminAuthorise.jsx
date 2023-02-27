@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import './AdminAuthorise.css';
 import AdminBox from '../../Components/AdminBox/AdminBox';
+import { useNavigate } from "react-router-dom";
 
 function AdminAuthorise() {
+    const navigate = useNavigate();
+
     const [fetchedAdmins, setFetchedLAdmins] = React.useState([]);
 
     useEffect(() => {
@@ -59,11 +62,16 @@ function AdminAuthorise() {
             })
     }
 
+    const handleBackToAdminView = () => {
+        navigate('/AdminView');
+    }
+
     return (
         <div className='authorise-container'>
             <div className='authorise-sections-container'>
                 <div className='authorise-title-box'>
                     <div className='authorise-title-text'>Admin Authorise</div>
+                    <button className='btn btn-secondary authorise-back-btn' onClick={handleBackToAdminView}>Back to Admin View</button>
                 </div>
 
                 <div className='line'></div>
