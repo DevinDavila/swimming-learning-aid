@@ -13,9 +13,9 @@ function Home() {
                         <div className="login-left-section-image-container">
                             <img src={penImg} alt="pen-icon" className="login-left-section-image" />
                         </div>
-                        <text className="login-left-section-text">For instructors and assistants ONLY</text>
-                        <text className="login-left-section-text">Be able to track your Learners’ progress and
-                            figure out their strengths and weaknesses</text>
+                        <div className="login-left-section-text">For instructors and assistants ONLY</div>
+                        <div className="login-left-section-text">Be able to track your Learners’ progress and
+                            figure out their strengths and weaknesses</div>
                     </div>
                 </Link>
                 <Link className="login-sections-link" to="/learner">
@@ -24,8 +24,8 @@ function Home() {
                         <div className="login-right-section-image-container">
                             <img src={swimImg} alt="swimming-icon" className="login-right-section-image" />
                         </div>
-                        <text className="login-right-section-text">Gain access to a variety of quizzes and information
-                            to benefit you and your swimming career</text>
+                        <div className="login-right-section-text">Gain access to a variety of quizzes and information
+                            to benefit you and your swimming career</div>
                     </div>
                 </Link>
             </div>

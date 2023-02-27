@@ -6,6 +6,7 @@ import Quiz from './Pages/Quiz/Quiz';
 import Stages from './Pages/Stages/Stages';
 import AdminView from './Pages/AdminView/AdminView';
 import AdminAuthorise from './Pages/AdminAuthorise/AdminAuthorise';
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
 function App() {
   return (
@@ -13,10 +14,12 @@ function App() {
       <Route exact path="/" element={<Home />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/learner" element={<Learner />} />
-      <Route path="/quiz" element={<Quiz />} />
-      <Route path="/stages" element={<Stages />} />
-      <Route path="/AdminView" element={<AdminView />} />
-      <Route path="/AdminAuthorise" element={<AdminAuthorise />} />
+      <Route element={<ProtectedRoute />}>
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/stages" element={<Stages />} />
+        <Route path="/AdminView" element={<AdminView />} />
+        <Route path="/AdminAuthorise" element={<AdminAuthorise />} />
+      </Route>
     </Routes>
   );
 }
