@@ -76,6 +76,11 @@ function Admin() {
                             if (result.status === 'success') {
                                 userAdded();
                                 setSignUp(false);
+                                setFirstName('');
+                                setLastName('');
+                                setEmail('');
+                                setPassword('');
+                                setConfirmPassword('');
                             } else {
                                 userExists();
                             }

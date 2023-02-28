@@ -63,9 +63,10 @@ function Learner() {
     }
 
     const handleDOBChange = (event) => {
-        const newDate = new Date(event.target.value);
-        if (newDate < dateOfBirth) {
-            setDateOfBirth(newDate);
+        const selectedDate = new Date(event.target.value);
+        const today = new Date();
+        if (selectedDate < today) {
+            setDateOfBirth(selectedDate);
         } else {
             validDOB();
         }
@@ -101,6 +102,14 @@ function Learner() {
                             if (result.status === 'success') {
                                 userAdded();
                                 setSignUp(false);
+                                setFirstName('');
+                                setLastName('');
+                                setEmail('');
+                                setPassword('');
+                                setConfirmPassword('');
+                                setDateOfBirth(new Date);
+                                setGuardianFirstName('');
+                                setGuardianLastName('');
                             } else {
                                 userExists();
                             }
