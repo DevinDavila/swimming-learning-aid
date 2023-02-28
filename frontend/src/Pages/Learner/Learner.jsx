@@ -23,28 +23,29 @@ function Learner() {
     const handleHideSignUp = () => setSignUp(false);
 
     const handleLogin = () => {
-        fetch('http://localhost:5000/api/authentication/login', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email,
-                password: password
+        if (emailValidationRegex.test(email)) {
+            fetch('http://localhost:5000/api/authentication/login', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
             })
-        })
-            .then((Response) => Response.json())
-            .then((result) => {
-                if (result.status === 'success') {
-                    sessionStorage.setItem('token', result.user.token);
-                    sessionStorage.setItem('email', email);
-                    sessionStorage.setItem('userId', result.user._id);
-                    navigate('/stages');
-                } else {
-                    wrongLogin();
-                }
-            })
+                .then((Response) => Response.json())
+                .then((result) => {
+                    if (result.status === 'success') {
+                        sessionStorage.setItem('token', result.user.token);
+                        sessionStorage.setItem('email', email);
+                        sessionStorage.setItem('userId', result.user._id);
+                        navigate('/stages');
+                    } else {
+                        wrongLogin();
+                    }
+                })
                 .then((Response) => Response.json())
                 .then((result) => {
                     if (result.status === 'success') {
@@ -192,7 +193,7 @@ function Learner() {
                                     </div>
                                     <div className="form-group">
                                         <label>Guardian Surname</label>
-                                        <input type="name" onChange={e => setGuardianLastName(e.target.value)} className="form-control"  placeholder="e.g. Jones" />
+                                        <input type="name" onChange={e => setGuardianLastName(e.target.value)} className="form-control" placeholder="e.g. Jones" />
                                     </div>
                                     <div className="form-group">
                                         <label>Learner Firstname</label> <div className="learner-required-text"> *</div>
