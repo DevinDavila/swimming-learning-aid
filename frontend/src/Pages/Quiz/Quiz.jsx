@@ -30,7 +30,7 @@ function Quiz() {
         })
             .then((Response) => Response.json())
             .then(data => {
-                const questionsToDisplay = data.sort(() => Math.random() - 0.5).slice(0, 4);
+                const questionsToDisplay = data.sort(() => Math.random() - 0.5).slice(0, 10);
 
                 questionsToDisplay.forEach((question) => {
                     fetch(`http://localhost:5000/api/answers/answersByQuestionId/${question._id}`, {
@@ -55,7 +55,8 @@ function Quiz() {
         if (correctAnswer)
             setCorrectAnswers(correctAnswers + 1);
 
-        if (currentQuestion === 3) {
+        // If currectQuestion is equal to the last question in the array
+        if (currentQuestion === 9) {
             setTimeout(() => {
                 setComplete(true);
             }, 1000);
