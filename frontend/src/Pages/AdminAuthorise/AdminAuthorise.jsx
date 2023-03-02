@@ -17,7 +17,8 @@ function AdminAuthorise() {
             method: 'get',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'x-access-token': sessionStorage.getItem('token')
             }
         })
             .then((Response) => Response.json())
@@ -32,6 +33,7 @@ function AdminAuthorise() {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'x-access-token': sessionStorage.getItem('token')
             },
             body: JSON.stringify({
                 user_id: adminId,
@@ -50,6 +52,7 @@ function AdminAuthorise() {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'x-access-token': sessionStorage.getItem('token')
             },
             body: JSON.stringify({
                 user_id: adminId,
