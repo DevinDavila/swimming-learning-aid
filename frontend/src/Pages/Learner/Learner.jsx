@@ -8,6 +8,10 @@ import "react-toastify/dist/ReactToastify.css";
 function Learner() {
     const navigate = useNavigate();
     const emailValidationRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
+    // Getting yesterday's date to set as default in the DOB input
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
 
     const [signUp, setSignUp] = React.useState(false);
     const [email, setEmail] = useState('');
@@ -17,7 +21,7 @@ function Learner() {
     const [lastName, setLastName] = useState('');
     const [guardianFirstName, setGuardianFirstName] = useState('');
     const [guardianLastName, setGuardianLastName] = useState('');
-    const [dateOfBirth, setDateOfBirth] = useState(new Date());
+    const [dateOfBirth, setDateOfBirth] = useState(yesterday);
 
     const handleShowSignUp = () => setSignUp(true)
     const handleHideSignUp = () => setSignUp(false);
@@ -190,7 +194,7 @@ function Learner() {
                                     </div>
                                     <div className="form-group">
                                         <label>Enter your Date of Birth</label> <div className="learner-required-text"> *</div>
-                                        <input type="date" onChange={handleDOBChange} className="form-control" />
+                                        <input type="date" value={dateOfBirth.toISOString().substring(0, 10)} onChange={handleDOBChange} className="form-control" />
                                     </div>
                                 </form>
                             </div>
