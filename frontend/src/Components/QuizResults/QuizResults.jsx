@@ -15,6 +15,7 @@ function QuizResults(props) {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'x-access-token': sessionStorage.getItem('token')
             },
             body: JSON.stringify({
                 user_id: sessionStorage.getItem("userId"),
