@@ -65,6 +65,7 @@ function Learner() {
     const handleDOBChange = (event) => {
         const selectedDate = new Date(event.target.value);
         const today = new Date();
+        today.setHours(0, 0, 0, 0);
         if (selectedDate < today) {
             setDateOfBirth(selectedDate);
         } else {
@@ -189,7 +190,7 @@ function Learner() {
                                     </div>
                                     <div className="form-group">
                                         <label>Enter your Date of Birth</label> <div className="learner-required-text"> *</div>
-                                        <input type="date" value={dateOfBirth.toISOString().substring(0, 10)} onChange={handleDOBChange} className="form-control" />
+                                        <input type="date" onChange={handleDOBChange} className="form-control" />
                                     </div>
                                 </form>
                             </div>
