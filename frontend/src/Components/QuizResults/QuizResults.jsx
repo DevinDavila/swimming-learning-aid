@@ -41,11 +41,11 @@ function QuizResults(props) {
                     <div className='quiz-stage-text'>Stage {props.stage} Quiz</div>
                     <div className='line'></div>
                     <div className='quiz-result-text'>Your score: {correctAnswers}/10 ({Percentage}%)</div>
-                    <div className='quiz-result-text'>Pass mark: 6/10 (60%)</div>
+                    <div className='quiz-result-text'>Pass mark: 7/10 (70%)</div>
                 </div>
 
                 <div className='response-box'>
-                    {correctAnswers > 9 ?
+                    {correctAnswers > 7 ?
                         <div className='quiz-response-text'>
                             Congratulations, you have passed this quiz and are ready to move on.
                         </div>
