@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Answer from '../../Components/Answer/Answer';
 import Logo from '../../Components/Logo/Logo';
 import Question from '../../Components/Question/Question';
@@ -12,6 +12,7 @@ function Quiz() {
     const [complete, setComplete] = useState(false);
     const [correctAnswers, setCorrectAnswers] = useState(0);
 
+    const navigate = useNavigate();
     const { state } = useLocation();
     const { stage } = state;
 
@@ -43,7 +44,8 @@ function Quiz() {
                     })
                         .then((response) => response.json())
                         .then((answers) => {
-                            question.answers = answers;
+                            const randomiseAnswers = answers.sort(() => Math.random() - 0.5);
+                            question.answers = randomiseAnswers;
 
                             setQuestions(questionsToDisplay);
                         });
@@ -67,16 +69,20 @@ function Quiz() {
         }
     }
 
+    const handleBackToStages = () => {
+        navigate('/stages');
+    }
+
     return (
         <div className='quiz-container'>
             {!complete ?
                 <>
                     <div className="quiz-top-section">
                         <Logo />
-                        <div className="option-container">
-                            <div className="back-container">Back home</div>
-                            <div className="results-container">Results</div>
-                            <div className="account-container">Account</div>
+                        <div className="quiz-option-container">
+                            <div className="quiz-back-container" onClick={handleBackToStages}>Back home</div>
+                            <div className="quiz-results-container">Results</div>
+                            <div className="quiz-account-container">Account</div>
                         </div>
                     </div>
                     <div className="main-container">

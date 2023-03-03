@@ -6,7 +6,7 @@
     justify-content: space-between;
 }
 
-.option-container{
+.stages-option-container{
     background-color:#555555;
     height: 110px;
     width: 1000px;
@@ -16,24 +16,24 @@
     margin: 10px;
 }
 
-.results-container{
+.stages-results-container{
     display:flex;
     align-items: center;
 }
 
-.results-text{
+.stages-results-text{
     color: white;
     text-align: center;
     font-size: 28px;
     font-weight: bold;
 }
 
-.account-container{
+.stages-account-container{
     display:flex;
     align-items: center;
 }
 
-.account-text{
+.stages-account-text{
     color: white;
     text-align: center;
     font-size: 28px;
