@@ -4,22 +4,24 @@
     justify-content: space-between;
 }
 
-.option-container{
+.quiz-option-container{
     background-color:#555555;
     height: 110px;
     width: 1000px;
     border-radius: 15px;
     display: flex;
     justify-content: space-around;
+    margin: 10px;
 }
 
-.results-container, .account-container, .back-container{
+.quiz-results-container, .quiz-account-container, .quiz-back-container{
     display:flex;
     align-items: center;
     color: white;
     text-align: center;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .main-container{

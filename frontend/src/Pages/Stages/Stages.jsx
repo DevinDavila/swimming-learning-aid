@@ -14,12 +14,12 @@ function Stages() {
         <div>
             <div className="top-section">
                 <Logo />
-                <div className="option-container">
-                    <div className="results-container">
-                        <div className="results-text">Results</div>
+                <div className="stages-option-container">
+                    <div className="stages-results-container">
+                        <div className="stages-results-text">Results</div>
                     </div>
-                    <div className="account-container">
-                        <div className="account-text">Account</div>
+                    <div className="stages-account-container">
+                        <div className="stages-account-text">Account</div>
                     </div>
                 </div>
             </div>
