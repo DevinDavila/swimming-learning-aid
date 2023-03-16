@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import './Stages.css';
 import Logo from '../../Components/Logo/Logo';
 import StageBox from '../../Components/StageBox/StageBox';
@@ -41,10 +42,10 @@ function Stages() {
                 <div className="bottom-section-text">Further Swimming</div>
                 <div className="bottom-section-boxes">
                     <div className="left-box">
-                        <div className="left-box-text">Job/Career Opportunities</div>
+                        <Link className="left-box-text" to="https://www.swimming.org/careers/" target="_blank" >Job/Career Opportunities</Link>
                     </div>
                     <div className="right-box">
-                        <div className="right-box-text">Club Opportunities</div>
+                        <Link className="right-box-text" to="https://discover.swimming.org/" target="_blank" >Club Opportunities</Link>
                     </div>
                 </div>
             </div>
