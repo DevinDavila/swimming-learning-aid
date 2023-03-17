@@ -1,7 +1,7 @@
-.view-container{
+.view-container {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: -70px;
     height: 552px;
 }
 
@@ -18,7 +18,7 @@
 }
 
 /* Title */
-.view-title-box{
+.view-title-box {
     display: flex;
     height: 60px;
     width: 100%;
@@ -28,10 +28,10 @@
     align-items: center;
 }
 
-.view-title-text{
+.view-title-text {
     color: #000000;
     text-align: left;
-    font-size: 38px;   
+    font-size: 38px;
     font-weight: bold;
     margin-left: 15px;
 }
@@ -42,16 +42,16 @@
 }
 
 /* Line */
-.line{
+.line {
     background-color: #626262;
-    width:100%;
-    height:2px;
+    width: 100%;
+    height: 2px;
     margin-top: -5px;
     margin-bottom: 10px;
 }
 
 /* Top row */
-.Admin-view-main-table-row{
+.Admin-view-main-table-row {
     display: table;
     width: 98%;
     height: 60px;
@@ -64,11 +64,10 @@
     margin-bottom: 10px;
 }
 
-.Admin-view-main-table-cell{
+.Admin-view-main-table-cell {
     display: table-cell;
     width: 20%;
     text-align: center;
     border-right: 3px solid white;
     vertical-align: middle;
 }
-
