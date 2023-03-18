@@ -164,7 +164,7 @@
 
 @media (max-width: 1600px) { 
     .admin-sign-up-main-section {
-        margin-top: 50px;
+        margin-top: 30px;
     }
 }
 
@@ -173,7 +173,6 @@
         width: 450px;
         height: 680px;
         align-items: center;
-        margin-top: 30px;
     }
 
     .admin-sign-up-big-section {
@@ -190,19 +189,6 @@
 @media (max-width: 500px) {
     .admin-sign-up-main-section {
         width: 350px;
-        height: 680px;
-        align-items: center;
-        margin-top: 30px;
-    }
-
-    .admin-sign-up-big-section {
-        width: 350px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .admin-sign-up-submit-button {
-        margin-top: 20px;
     }
 
     .admin-sign-up-left-section {
