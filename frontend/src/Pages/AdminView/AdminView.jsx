@@ -14,7 +14,7 @@ function AdminView() {
     const [visibleAuthPage, setVisibleAuthPage] = React.useState(false);
 
     useEffect(() => {
-        if (sessionStorage.getItem("email") == 'devin@gmail.com')
+        if (sessionStorage.getItem("email") === 'devin@gmail.com')
             setVisibleAuthPage(true);
         else
             setVisibleAuthPage(false);
