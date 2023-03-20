@@ -63,7 +63,7 @@ function AdminView() {
     }
 
     return (
-        <>
+        <div className='admin-view-full-container'>
             <Logo />
             <div className='view-container'>
                 {!results ?
@@ -91,7 +91,7 @@ function AdminView() {
                     </>
                 }
             </div>
-        </>
+        </div>
     );
 }
 

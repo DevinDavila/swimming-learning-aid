@@ -28,3 +28,24 @@
     vertical-align: middle;
 }
 
+@media (max-width: 1050px) {
+    .result-box {
+        width: 580px;
+        height: 85px;
+    }
+    
+    .result-box-table-row{
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 650px) {
+    .result-box {
+        width: 350px;
+        height: 65px;
+    }
+    
+    .result-box-table-row{
+        font-size: 14px;
+    }
+}
