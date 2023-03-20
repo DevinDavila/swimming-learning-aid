@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    height: 552px;
 }
 
 .quiz-result-sections-container {
@@ -12,9 +11,8 @@
     flex-direction: column;
     position: absolute;
     background-color: white;
-    box-shadow: 10px;
     align-items: center;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
 }
 
 /* Title */
@@ -22,16 +20,14 @@
     display: flex;
     width: 100%;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     flex-direction: column;
-    /*border: solid red 2px;*/
 }
 
 .quiz-result-text{
     color: #000000;
     text-align: left;
     font-size: 32px;
-    font-family: 'Calibri','Arial';
     font-weight: bold;
     margin-left: 15px;
 }
@@ -40,7 +36,6 @@
     color: #000000;
     text-align: left;
     font-size: 40px;
-    font-family: 'Calibri','Arial';
     font-weight: bold;
     margin-left: 15px;
     margin-bottom: 20px;
@@ -55,7 +50,6 @@
     margin-bottom: 10px;
 }
 
-
 /* Response */
 
 .response-box{
@@ -69,15 +63,77 @@
     text-align: center;
     justify-content: center;
     font-size: 32px;
-    font-family: 'Calibri','Arial';
-    margin-left: 15px;
 }
 
 .return-button{
     display: flex;
-    font-family: 'Calibri','Arial';
     justify-content: center;
     color: white;
     font-size: 28px !important;
     margin: 20px 0 20px 0;
+}
+
+@media (max-width: 950px) {
+    .quiz-result-sections-container {
+        width: 600px;
+    }
+    
+    /* Title */
+    .quiz-result-title-box{
+        margin-top: 15px;
+    }
+    
+    .quiz-result-text{
+        font-size: 30px;
+    }
+    
+    .quiz-stage-text{
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+    
+    /* Response */
+    
+    .response-box{
+        margin: 0 0 10px 0;
+    }
+    
+    .quiz-response-text{
+        font-size: 30px;
+    }
+    
+    .return-button{
+        margin: 15px 0 20px 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .quiz-result-sections-container {
+        width: 350px;
+    }
+    
+    /* Title */
+
+    .quiz-result-text{
+        font-size: 27px;
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .quiz-stage-text{
+        font-size: 30px;
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    /* Response */
+    
+    .quiz-response-text{
+        font-size: 27px;
+    }
+    
+    .return-button{
+        margin: 10px 0 20px 0;
+        font-size: 26px !important;
+    }
 }
