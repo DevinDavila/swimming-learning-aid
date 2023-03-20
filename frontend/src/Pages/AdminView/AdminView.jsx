@@ -3,6 +3,7 @@ import './AdminView.css';
 import LearnerBox from '../../Components/LearnerBox/LearnerBox';
 import Results from '../../Components/Results/Results';
 import { useNavigate } from "react-router-dom";
+import Logo from '../../Components/Logo/Logo';
 
 function AdminView() {
     const navigate = useNavigate();
@@ -62,32 +63,35 @@ function AdminView() {
     }
 
     return (
-        <div className='view-container'>
-            {!results ?
-                <div className='view-sections-container'>
-                    <div className='view-title-box'>
-                        <div className='view-title-text'>Admin View</div>
-                        {visibleAuthPage ? <button className='btn btn-secondary view-auth-btn' onClick={handleAuthPage}>Authorise Admins</button> : null}
-                    </div>
-                    <div className='line'></div>
+        <>
+            <Logo />
+            <div className='view-container'>
+                {!results ?
+                    <div className='view-sections-container'>
+                        <div className='view-title-box'>
+                            <div className='view-title-text'>Admin View</div>
+                            {visibleAuthPage ? <button className='btn btn-secondary view-auth-btn' onClick={handleAuthPage}>Authorise Admins</button> : null}
+                        </div>
+                        <div className='line'></div>
 
-                    <div className="Admin-view-main-table-row">
-                        <div className="Admin-view-main-table-cell">First name</div>
-                        <div className="Admin-view-main-table-cell">Surname</div>
-                        <div className="Admin-view-main-table-cell">Date of birth</div>
+                        <div className="Admin-view-main-table-row">
+                            <div className="Admin-view-main-table-cell">First name</div>
+                            <div className="Admin-view-main-table-cell">Surname</div>
+                            <div className="Admin-view-main-table-cell">Date of birth</div>
+                        </div>
+                        {Array.isArray(fetchedLearners) ? fetchedLearners.map((learner) => (
+                            <LearnerBox key={learner._id} Firstname={learner.first_name} Surname={learner.last_name} DOB={new Date(learner.date_of_birth).toLocaleDateString()} onClick={() => handleShowSelectedLearner(learner)} />
+                        )) : null}
                     </div>
-                    {Array.isArray(fetchedLearners) ? fetchedLearners.map((learner) => (
-                        <LearnerBox key={learner._id} Firstname={learner.first_name} Surname={learner.last_name} DOB={new Date(learner.date_of_birth).toLocaleDateString()} onClick={() => handleShowSelectedLearner(learner)} />
-                    )) : null}
-                </div>
-                :
-                <>
-                    {Object.keys(fetchedLearner).length > 0 ?
-                        <Results key={fetchedLearner._id} FirstName={fetchedLearner.first_name} LastName={fetchedLearner.last_name} learnerId={fetchedLearner._id} clickHideResults={handleHideSelectedLearner} />
-                        : null}
-                </>
-            }
-        </div>
+                    :
+                    <>
+                        {Object.keys(fetchedLearner).length > 0 ?
+                            <Results key={fetchedLearner._id} FirstName={fetchedLearner.first_name} LastName={fetchedLearner.last_name} learnerId={fetchedLearner._id} clickHideResults={handleHideSelectedLearner} />
+                            : null}
+                    </>
+                }
+            </div>
+        </>
     );
 }
 
