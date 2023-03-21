@@ -1,8 +1,7 @@
-.authorise-container{
+.authorise-container {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    height: 552px;
 }
 
 .authorise-sections-container {
@@ -12,13 +11,12 @@
     flex-direction: column;
     position: absolute;
     background-color: white;
-    box-shadow: 10px;
     align-items: center;
     padding-bottom: 15px;
 }
 
 /* Title */
-.authorise-title-box{
+.authorise-title-box {
     display: flex;
     height: 60px;
     width: 100%;
@@ -33,40 +31,37 @@
     height: 50px;
 }
 
-.authorise-title-text{
+.authorise-title-text {
     color: #000000;
     text-align: left;
     font-size: 40px;
-    font-family: 'Calibri','Arial';
     font-weight: bold;
     margin-left: 15px;
 }
 
 /* Line */
-.line{
+.line {
     background-color: #626262;
-    width:100%;
-    height:2px;
+    width: 100%;
+    height: 2px;
     margin-top: -5px;
     margin-bottom: 10px;
 }
 
 /* Top row */
-.authorise-main-table-row{
+.authorise-main-table-row {
     display: table;
     width: 98%;
     height: 60px;
-    color: #555;
     background-color: #2c6ae5;
     color: white;
     border-radius: 15px;
     font-size: 24px;
-    font-family: 'Calibri','Arial';
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.authorise-main-table-cell{
+.authorise-main-table-cell {
     display: table-cell;
     width: 20%;
     text-align: center;
@@ -74,3 +69,42 @@
     vertical-align: middle;
 }
 
+@media (max-width: 1250px) {
+    .authorise-sections-container {
+        width: 700px;
+    }
+
+    .authorise-title-text {
+        font-size: 35px;
+    }
+
+    /* Top row */
+    .authorise-main-table-row {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 750px) {
+    .authorise-sections-container {
+        width: 370px;
+    }
+
+    /* Title */
+    .authorise-title-box {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .authorise-title-text {
+        font-size: 25px;
+    }
+
+    .authorise-back-btn {
+        height: 60px;
+    }
+
+    /* Top row */
+    .authorise-main-table-row {
+        font-size: 17px;
+    }
+}

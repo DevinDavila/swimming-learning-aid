@@ -17,16 +17,34 @@
     border-radius: 15px;
     color: black;
     font-size: 24px;
-    font-family: 'Calibri','Arial';
     font-weight: bold;
-
 }
 
 .stage-results-box-table-cell {
     display: table-cell;
     width: 20%;
     text-align: center;
-    border-right: 3px solid white;
     vertical-align: middle;
 }
 
+@media (max-width: 1050px) {
+    .stage-results-box-container {
+        height: 85px;
+        width: 580px;
+    }
+    
+    .stage-results-box-table-row {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 650px) {
+    .stage-results-box-container {
+        height: 65px;
+        width: 350px;
+    }
+    
+    .stage-results-box-table-row {
+        font-size: 14px;
+    }
+}

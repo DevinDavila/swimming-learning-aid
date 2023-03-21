@@ -1,12 +1,12 @@
 /* Login */
 
-.admin-container{
+.admin-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.admin-login-section{
+.admin-login-section {
     width: 400px;
     height: 550px;
     background: #fff;
@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: -50px;
 }
 
 .admin-login-section-title {
@@ -58,7 +59,7 @@
 
 /* Sign up */
 
-.admin-sign-up-main-section{
+.admin-sign-up-main-section {
     width: 900px;
     height: 600px;
     background: #fff;
@@ -66,18 +67,19 @@
     display: flex;
     flex-direction: column;
     align-items: left;
+    margin-top: -50px;
 }
 
-.admin-sign-up-big-section{
+.admin-sign-up-big-section {
     width: 900px;
     height: 400px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
-.admin-sign-up-left-section{
+.admin-sign-up-left-section {
     width: 450px;
     height: 400px;
     border-radius: 15px;
@@ -86,7 +88,7 @@
     align-items: center;
 }
 
-.admin-sign-up-right-section{
+.admin-sign-up-right-section {
     width: 450px;
     height: 400px;
     border-radius: 15px;
@@ -102,7 +104,6 @@
     margin-bottom: 15px;
     margin-left: 40px;
     font-size: 40px;
-    
     font-weight: bold;
 }
 
@@ -138,9 +139,68 @@
     color: #0d6efd;
 }
 
-.admin-required-text{
+.admin-required-text {
     color: red;
     font-size: 17px;
-    
     display: inline-block;
+}
+
+/* Login media queries */
+
+@media (max-width: 1100px) {
+    .admin-login-section {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .admin-login-section {
+        width: 300px;
+        height: 550px;
+    }
+}
+
+/* Sign up media queries */
+
+@media (max-width: 1600px) { 
+    .admin-sign-up-main-section {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .admin-sign-up-main-section {
+        width: 450px;
+        height: 680px;
+        align-items: center;
+    }
+
+    .admin-sign-up-big-section {
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .admin-sign-up-submit-button {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .admin-sign-up-main-section {
+        width: 350px;
+    }
+
+    .admin-sign-up-left-section {
+        width: 350px;
+    }
+    
+    .admin-sign-up-right-section {
+        width: 350px;
+    }
+
+    .admin-sign-up-section-title {
+        margin-left: 0;
+        font-size: 35px;
+    }
 }

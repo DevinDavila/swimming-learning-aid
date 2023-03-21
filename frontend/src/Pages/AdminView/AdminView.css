@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     margin-top: -70px;
-    height: 552px;
 }
 
 .view-sections-container {
@@ -10,9 +9,7 @@
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    position: absolute;
     background-color: white;
-    box-shadow: 10px;
     align-items: center;
     padding-bottom: 15px;
 }
@@ -55,7 +52,6 @@
     display: table;
     width: 98%;
     height: 60px;
-    color: #555;
     background-color: #2c6ae5;
     color: white;
     border-radius: 15px;
@@ -68,6 +64,53 @@
     display: table-cell;
     width: 20%;
     text-align: center;
-    border-right: 3px solid white;
     vertical-align: middle;
+}
+
+@media (max-width: 1700px) {
+    .admin-view-full-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .view-container {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .view-sections-container {
+        width: 600px;
+    }
+    
+    .view-title-text {
+        font-size: 35px;
+    }
+    
+    /* Top row */
+    .Admin-view-main-table-row {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 650px) {
+    .view-sections-container {
+        width: 370px;
+    }
+
+    /* Title */
+    .view-title-box {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .view-title-text {
+        font-size: 25px;
+    }
+    
+    /* Top row */
+    .Admin-view-main-table-row {
+        font-size: 17px;
+    }
 }

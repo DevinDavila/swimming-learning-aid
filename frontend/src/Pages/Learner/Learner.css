@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: -50px;
 }
 
 .learner-login-section-title {
@@ -146,4 +146,65 @@
     font-size: 20px;
     font-style:italic;
     display: inline-block;
+}
+
+/* Login media queries */
+
+@media (max-width: 1100px) {
+    .learner-login-section {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .learner-login-section {
+        width: 300px;
+        height: 550px;
+    }
+}
+
+/* Sign up media queries */
+
+@media (max-width: 1600px) { 
+    .learner-sign-up-main-section {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .learner-sign-up-main-section{
+        width: 450px;
+        height: 910px;
+        align-items:center;
+        margin-bottom: 40px;
+    }
+    
+    .learner-sign-up-big-section{
+        width: 450px;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .learner-sign-up-submit-button-container {
+        margin-top: 290px;
+    }
+}
+
+@media (max-width: 500px) {
+    .learner-sign-up-main-section{
+        width: 350px;
+    }
+
+    .learner-sign-up-left-section{
+        width: 350px;
+    }
+    
+    .learner-sign-up-right-section{
+        width: 350px;
+    }
+
+    .learner-sign-up-section-title {
+        margin-left: 0;
+        font-size: 35px;
+    }
 }
