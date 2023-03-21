@@ -45,7 +45,7 @@ function QuizResults(props) {
                 </div>
 
                 <div className='response-box'>
-                    {correctAnswers > 7 ?
+                    {correctAnswers > 6 ?
                         <div className='quiz-response-text'>
                             Congratulations, you have passed this quiz and are ready to move on.
                         </div>
