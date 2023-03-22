@@ -65,6 +65,11 @@
     width: 20%;
     text-align: center;
     vertical-align: middle;
+    border-right: 3px solid white;
+}
+
+.Admin-view-main-table-cell:last-child {
+    border-right: none;
 }
 
 @media (max-width: 1700px) {

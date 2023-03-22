@@ -1,4 +1,4 @@
-.results-by-stage-container{
+.results-by-stage-container {
     display: flex;
     justify-content: center;
 }
@@ -15,7 +15,7 @@
 }
 
 /* Top section */
-.results-by-stage-title-box{
+.results-by-stage-title-box {
     display: flex;
     height: 60px;
     width: 100%;
@@ -25,10 +25,10 @@
     align-items: center;
 }
 
-.results-by-stage-title-text{
+.results-by-stage-title-text {
     color: #000000;
     text-align: left;
-    font-size: 38px;   
+    font-size: 38px;
     font-weight: bold;
     margin-left: 15px;
 }
@@ -41,16 +41,16 @@
 }
 
 /* Line */
-.line{
+.line {
     background-color: #626262;
-    width:100%;
-    height:2px;
+    width: 100%;
+    height: 2px;
     margin-top: -5px;
     margin-bottom: 10px;
 }
 
 /* Top row */
-.results-by-stage-main-table-row{
+.results-by-stage-main-table-row {
     display: table;
     width: 98%;
     height: 60px;
@@ -63,26 +63,31 @@
     cursor: default;
 }
 
-.results-by-stage-main-table-cell{
+.results-by-stage-main-table-cell {
     display: table-cell;
     width: 20%;
     text-align: center;
     vertical-align: middle;
+    border-right: 3px solid white;
+}
+
+.results-by-stage-main-table-cell:last-child {
+    border-right: none;
 }
 
 @media (max-width: 1050px) {
     .results-by-stage-section {
         width: 600px;
     }
-    
+
     /* Top section */
-    
-    .results-by-stage-title-text{
-        font-size: 35px;   
+
+    .results-by-stage-title-text {
+        font-size: 35px;
     }
-    
+
     /* Top row */
-    .results-by-stage-main-table-row{
+    .results-by-stage-main-table-row {
         font-size: 22px;
     }
 }
@@ -91,24 +96,24 @@
     .results-by-stage-section {
         width: 370px;
     }
-    
+
     /* Top section */
 
-    .results-by-stage-title-box{
+    .results-by-stage-title-box {
         margin-top: 15px;
         margin-bottom: 15px;
     }
-    
-    .results-by-stage-title-text{
-        font-size: 23px;   
+
+    .results-by-stage-title-text {
+        font-size: 23px;
     }
 
     .results-by-stage-title-x {
         font-size: 30px;
     }
-    
+
     /* Top row */
-    .results-by-stage-main-table-row{
+    .results-by-stage-main-table-row {
         font-size: 18px;
     }
 }
