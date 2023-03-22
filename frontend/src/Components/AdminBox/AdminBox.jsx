@@ -6,10 +6,18 @@ function AdminBox(props) {
             <div className="Admin-table-row">
                 <div className="Admin-table-cell">{props.Firstname}</div>
                 <div className="Admin-table-cell">{props.Surname}</div>
-                <div className="Admin-table-cell">{props.EmailAddress}</div>
+                <div className="Admin-table-cell email">{props.EmailAddress}</div>
                 <div className="Admin-table-cell">
-                    <button className="btn btn-success admin-button" onClick={props.clickGreen}>&#10003;</button> 
-                    <button className="btn btn-danger admin-button" onClick={props.clickRed}>&#88;</button> 
+                    <button className="btn btn-success admin-button" onClick={props.clickGreen}>
+                        <span className="icon-wrapper">
+                            &#10003;
+                        </span>
+                    </button>
+                    <button className="btn btn-danger admin-button" onClick={props.clickRed}>
+                        <span className="icon-wrapper">
+                            &#88;
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>
