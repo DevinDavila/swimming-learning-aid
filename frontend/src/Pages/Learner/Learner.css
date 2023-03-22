@@ -15,6 +15,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: -50px;
+    margin-bottom: 50px;
 }
 
 .learner-login-section-title {
@@ -34,7 +35,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 175px;
+    margin-top: 150px;
 }
 
 .learner-login-submit-button {
@@ -62,7 +63,6 @@
 
 .learner-sign-up-main-section{
     width: 900px;
-    height: 600px;
     background: #fff;
     border-radius: 15px;
     display: flex;
@@ -72,16 +72,14 @@
 
 .learner-sign-up-big-section{
     width: 900px;
-    height: 400px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 .learner-sign-up-left-section{
     width: 450px;
-    height: 400px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -90,7 +88,6 @@
 
 .learner-sign-up-right-section{
     width: 450px;
-    height: 400px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -116,12 +113,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .learner-sign-up-submit-button {
     width: 200px;
-    margin-top: -20px;
 }
 
 .learner-sign-up-submit-text {
@@ -183,11 +179,7 @@
         width: 450px;
         flex-direction: column;
         justify-content: flex-start;
-    }
-
-    .learner-sign-up-submit-button-container {
-        margin-top: 290px;
-    }
+    }    
 }
 
 @media (max-width: 500px) {

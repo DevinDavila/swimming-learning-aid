@@ -29,12 +29,12 @@ function Quiz() {
                 'x-access-token': sessionStorage.getItem('token')
             }
         })
-            .then((Response) => Response.json())
+            .then(response => response.json())
             .then(data => {
                 const questionsToDisplay = data.sort(() => Math.random() - 0.5).slice(0, 10);
 
-                questionsToDisplay.forEach((question) => {
-                    fetch(`http://localhost:5000/api/answers/answersByQuestionId/${question._id}`, {
+                const answerRequests = questionsToDisplay.map(question => {
+                    return fetch(`http://localhost:5000/api/answers/answersByQuestionId/${question._id}`, {
                         method: 'get',
                         headers: {
                             'Accept': 'application/json',
@@ -42,16 +42,19 @@ function Quiz() {
                             'x-access-token': sessionStorage.getItem('token')
                         }
                     })
-                        .then((response) => response.json())
-                        .then((answers) => {
+                        .then(response => response.json())
+                        .then(answers => {
                             const randomiseAnswers = answers.sort(() => Math.random() - 0.5);
                             question.answers = randomiseAnswers;
-
-                            setQuestions(questionsToDisplay);
+                            return question;
                         });
                 });
+
+                Promise.all(answerRequests).then(questionsWithAnswers => {
+                    setQuestions(questionsWithAnswers);
+                });
             });
-    }
+    };
 
     const handleAnswerSelect = (correctAnswer) => {
         if (correctAnswer)
