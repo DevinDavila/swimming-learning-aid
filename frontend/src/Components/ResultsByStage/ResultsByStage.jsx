@@ -6,7 +6,8 @@ function ResultsByStage(props) {
     const [fetchedResults, setFetchedResults] = React.useState([]);
 
     useEffect(() => {
-        handleFetchScoresByStage();
+        handleFetchScoresByStage(); 
+        // eslint-disable-next-line
     }, []);
 
     const handleFetchScoresByStage = () => {
