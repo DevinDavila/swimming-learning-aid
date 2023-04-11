@@ -11,7 +11,7 @@ function ResultsByStage(props) {
     }, []);
 
     const handleFetchScoresByStage = () => {
-        fetch(`http://localhost:5000/api/scores/scoresByLearnerIdByStage/${props.learnerId}/${props.stage}`, {
+        fetch(`http://176.58.96.143:5000/api/scores/scoresByLearnerIdByStage/${props.learnerId}/${props.stage}`, {
             method: 'get',
             headers: {
                 'Accept': 'application/json',

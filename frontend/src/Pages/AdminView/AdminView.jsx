@@ -23,7 +23,7 @@ function AdminView() {
     }, []);
 
     const handleFetchLearners = () => {
-        fetch('http://localhost:5000/api/users/getAllLearners', {
+        fetch('http://176.58.96.143:5000/api/users/getAllLearners', {
             method: 'get',
             headers: {
                 'Accept': 'application/json',
@@ -44,7 +44,7 @@ function AdminView() {
     const handleHideSelectedLearner = () => setResults(false);
 
     const handleFetchLearner = (learner) => {
-        fetch(`http://localhost:5000/api/users/getLearnerById/${learner._id}`, {
+        fetch(`http://176.58.96.143:5000/api/users/getLearnerById/${learner._id}`, {
             method: 'get',
             headers: {
                 'Accept': 'application/json',

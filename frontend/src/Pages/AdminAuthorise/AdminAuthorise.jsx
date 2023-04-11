@@ -13,7 +13,7 @@ function AdminAuthorise() {
     }, []);
 
     const handleFetchAdmins = () => {
-        fetch('http://localhost:5000/api/users/getAllPendingAdmins', {
+        fetch('http://176.58.96.143:5000/api/users/getAllPendingAdmins', {
             method: 'get',
             headers: {
                 'Accept': 'application/json',
@@ -28,7 +28,7 @@ function AdminAuthorise() {
     }
 
     const handleApprove = (adminId) => {
-        fetch('http://localhost:5000/api/users/updateAdminStatus', {
+        fetch('http://176.58.96.143:5000/api/users/updateAdminStatus', {
             method: 'put',
             headers: {
                 'Accept': 'application/json',
@@ -47,7 +47,7 @@ function AdminAuthorise() {
     }
 
     const handleDecline = (adminId) => {
-        fetch('http://localhost:5000/api/users/updateAdminStatus', {
+        fetch('http://176.58.96.143:5000/api/users/updateAdminStatus', {
             method: 'put',
             headers: {
                 'Accept': 'application/json',

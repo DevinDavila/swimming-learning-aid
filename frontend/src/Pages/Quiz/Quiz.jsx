@@ -21,7 +21,7 @@ function Quiz() {
     }, []);
 
     const handleFetchquestions = () => {
-        fetch(`http://localhost:5000/api/questions/questionsByStage/${stage}`, {
+        fetch(`http://176.58.96.143:5000/api/questions/questionsByStage/${stage}`, {
             method: 'get',
             headers: {
                 'Accept': 'application/json',
@@ -34,7 +34,7 @@ function Quiz() {
                 const questionsToDisplay = data.sort(() => Math.random() - 0.5).slice(0, 10);
 
                 const answerRequests = questionsToDisplay.map(question => {
-                    return fetch(`http://localhost:5000/api/answers/answersByQuestionId/${question._id}`, {
+                    return fetch(`http://176.58.96.143:5000/api/answers/answersByQuestionId/${question._id}`, {
                         method: 'get',
                         headers: {
                             'Accept': 'application/json',

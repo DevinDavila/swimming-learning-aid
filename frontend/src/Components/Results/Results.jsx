@@ -17,7 +17,7 @@ function Results(props) {
 
         const fetchPromises = [];
         for (let stage = 1; stage < 8; stage++) {
-            fetchPromises.push(fetch(`http://localhost:5000/api/scores/scoresByLearnerIdByStage/${props.learnerId}/${stage}`, {
+            fetchPromises.push(fetch(`http://176.58.96.143:5000/api/scores/scoresByLearnerIdByStage/${props.learnerId}/${stage}`, {
                 method: 'get',
                 headers: {
                     'Accept': 'application/json',

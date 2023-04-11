@@ -28,7 +28,7 @@ function Learner() {
 
     const handleLogin = () => {
         if (emailValidationRegex.test(email)) {
-            fetch('http://localhost:5000/api/authentication/login', {
+            fetch('http://176.58.96.143:5000/api/authentication/login', {
                 method: 'post',
                 headers: {
                     'Accept': 'application/json',
@@ -85,7 +85,7 @@ function Learner() {
                 passwordsNotMatching();
             } else {
                 if (emailValidationRegex.test(email)) {
-                    fetch('http://localhost:5000/api/authentication/register', {
+                    fetch('http://176.58.96.143:5000/api/authentication/register', {
                         method: 'post',
                         headers: {
                             'Accept': 'application/json',
