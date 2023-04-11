@@ -10,7 +10,7 @@ function QuizResults(props) {
     }, []);
 
     const handleSaveScore = () => {
-        fetch('http://localhost:5000/api/scores/add', {
+        fetch('http://176.58.96.143:5000/api/scores/add', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
